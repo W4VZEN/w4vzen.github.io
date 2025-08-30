@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi Página Web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web Artística</title>
+    <style>
+        /* Estilo para el fondo */
+        body {
+            background: linear-gradient(to bottom, #ff7e5f, #feb47b); /* Fondo con gradiente */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff; /* Color de texto blanco para mejor contraste */
+            text-align: center;
+        }
+        
+        /* Estilo para el contenedor de texto */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Centrado vertical */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Estilo del título */
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            padding: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+        }
+
+        /* Estilo del párrafo */
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para el párrafo */
+        }
+        
+        /* Responsive: Asegura que el texto y el diseño se ajusten a diferentes tamaños de pantalla */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em; /* Reduce el tamaño del título en pantallas pequeñas */
+            }
+
+            p {
+                font-size: 1.2em; /* Reduce el tamaño del texto en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em; /* Reduce aún más el tamaño del título en pantallas muy pequeñas */
+            }
+
+            p {
+                font-size: 1em; /* Reduce el tamaño del texto en pantallas muy pequeñas */
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>¡Hola, ya tengo mi página web!</h1>
+    <div class="content">
+        <h1>¡Hola, ya tengo mi página web!</h1>
+        <p>Este es mi primer proyecto artístico en línea.</p>
+    </div>
 </body>
 </html>
