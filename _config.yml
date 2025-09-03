@@ -1,0 +1,4 @@
+plugins:
+  - jekyll-sitemap
+
+url: "https://www.w4vzen.com.ar"
