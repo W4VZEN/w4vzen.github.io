@@ -1,12 +1,25 @@
 
+
+/* ---------------------------------------------
+   Fondo moderno y oscuro con efecto brillante
+---------------------------------------------- */
 body {
-  background: linear-gradient(to bottom, #2c2c2c, #6e6e6e);
+  /* Fondo degradado oscuro con brillos radiales */
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.12), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(255, 127, 95, 0.15), transparent 50%),
+    linear-gradient(to bottom, #2c2c2c, #6e6e6e);
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   color: #f0f0f0;
   text-align: center;
+  min-height: 100vh; /* Para asegurar altura completa */
 }
+
+/* ---------------------------------------------
+   Contenedor principal centrado vertical y horizontalmente
+---------------------------------------------- */
 .content {
   display: flex;
   flex-direction: column;
@@ -16,34 +29,68 @@ body {
   padding: 20px;
   box-sizing: border-box;
 }
+
+/* ---------------------------------------------
+   Encabezado principal
+---------------------------------------------- */
 h1 {
   font-size: 5em;
   margin: 0;
   padding: 10px;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-  user-select: none;
+  user-select: none; /* Evita selección accidental */
 }
+
+/* ---------------------------------------------
+   Párrafo descriptivo
+---------------------------------------------- */
 p {
   font-size: 1.5em;
   margin: 20px 0;
   line-height: 1.6;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
+
+/* ---------------------------------------------
+   Contenedor de iconos sociales (links)
+---------------------------------------------- */
 .social-links {
   margin-top: 40px;
   display: flex;
   gap: 30px;
   justify-content: center;
-  font-size: 2em;
+  font-size: 2em; /* Controla el tamaño general de los iconos */
 }
+
+/* ---------------------------------------------
+   Enlaces sociales: color y efecto hover
+---------------------------------------------- */
 .social-links a {
   color: #f0f0f0;
   text-decoration: none;
   transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
 }
+
+/* Efecto hover: cambia a un naranja suave */
 .social-links a:hover {
   color: #ff7e5f;
 }
+
+/* ---------------------------------------------
+   SVG dentro de enlaces: tamaño uniforme
+---------------------------------------------- */
+.social-links a svg {
+  width: 36px;   /* Tamaño fijo para todos los iconos */
+  height: 36px;
+  fill: currentColor; /* Hereda el color del enlace */
+  transition: fill 0.3s ease;
+}
+
+/* ---------------------------------------------
+   Responsive para tablets
+---------------------------------------------- */
 @media (max-width: 768px) {
   h1 {
     font-size: 3.5em;
@@ -55,7 +102,15 @@ p {
     font-size: 1.5em;
     gap: 20px;
   }
+  .social-links a svg {
+    width: 28px;
+    height: 28px;
+  }
 }
+
+/* ---------------------------------------------
+   Responsive para móviles
+---------------------------------------------- */
 @media (max-width: 480px) {
   h1 {
     font-size: 2.5em;
@@ -66,5 +121,9 @@ p {
   .social-links {
     font-size: 1.2em;
     gap: 15px;
+  }
+  .social-links a svg {
+    width: 24px;
+    height: 24px;
   }
 }
