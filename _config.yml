@@ -1,4 +1,10 @@
+
+title: W4VZEN
+description: Proyecto artístico personal en línea. Descubre mi primer sitio web con contenido creativo y diseño simple.
+url: "https://www.w4vzen.com.ar"
+baseurl: "" # Déjalo así si estás en el root del dominio
 plugins:
   - jekyll-sitemap
 
-url: "https://www.w4vzen.com.ar"
+
+
