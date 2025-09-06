@@ -1,6 +1,4 @@
 
-<h1>W4VZEN</h1>
-
 <p>La Página sigue en construcción, pero puedes visitarme en mis redes sociales.</p>
 
 <nav class="social-links" aria-label="Enlaces a redes sociales">
