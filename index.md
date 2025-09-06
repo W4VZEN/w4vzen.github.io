@@ -1,10 +1,4 @@
 
----
-layout: default
-title: W4VZEN
-description: La Página sigue en construcción, pero puedes visitarme en mis redes sociales.
----
-
 <h1>W4VZEN</h1>
 
 <p>La Página sigue en construcción, pero puedes visitarme en mis redes sociales.</p>
