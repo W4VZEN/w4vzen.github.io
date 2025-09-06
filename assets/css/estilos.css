@@ -2,16 +2,69 @@
    ESTILOS GENERALES DEL BODY
    =========================== */
 body {
-  /* Fondo moderno con gradiente oscuro, brillo sutil y efecto de transparencia */
-  background: radial-gradient(circle at center, rgba(70, 70, 90, 0.7), #1a1a2e 80%);
+  /* Fondo negro con gradiente radial brillante */
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 70%),
+              linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  color: #f0f0f0; /* Texto claro para buen contraste */
+  color: #f0f0f0;
   text-align: center;
-  /* Para darle un efecto sutil de brillo */
-  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
 }
+
+/* Capas de líneas brillantes animadas para efecto futurista */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05) 2px,
+      transparent 2px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05) 2px,
+      transparent 2px,
+      transparent 10px
+    );
+  animation: moveLines 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animación de movimiento sutil de las líneas */
+@keyframes moveLines {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* Para que el contenido quede encima */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 
 /* ===========================
    CONTENEDOR PRINCIPAL
