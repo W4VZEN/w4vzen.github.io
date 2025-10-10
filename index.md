@@ -11,12 +11,12 @@
     </svg>
   </a>
 
-  <a href="https://x.com/artista" target="_blank" rel="noopener noreferrer" aria-label="X">
-    <!-- Icono X (Twitter actualizado) -->
-    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.608 1.794-1.574 2.163-2.724-.951.564-2.005.974-3.127 1.195-.897-.959-2.178-1.559-3.594-1.559-3.179 0-5.515 3.004-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.061c0 2.388 1.693 4.384 3.946 4.837-.734.2-1.513.232-2.224.084.627 1.956 2.444 3.377 4.6 3.416-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.209 7.548 2.209 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-    </svg>
-  </a>
+ <a href="https://x.com/W4VZEN" target="_blank" rel="noopener noreferrer" aria-label="X">
+  <!-- Icono X -->
+  <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.503 11.24H16.14l-5.048-6.58-5.776 6.58H1.999l7.73-8.8L1.5 2.25h6.53l4.546 6.013zM17.02 19.65h1.83L7.08 4.028H5.113z"/>
+  </svg>
+</a>
 
   <a href="https://instagram.com/w4vzen" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
     <!-- Icono Instagram -->
