@@ -157,3 +157,24 @@ p {
     height: 32px;
   }
 }
+/* ===========================
+   FOOTER FIJO AL FINAL
+   =========================== */
+footer {
+  position: fixed;               /* Fijo en la pantalla */
+  bottom: 0;                     /* Pegado al borde inferior */
+  left: 0;
+  width: 100%;                   /* Ocupa todo el ancho */
+  padding: 10px 0;               /* Espacio interno */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  color: #f0f0f0;                /* Color del texto */
+  text-align: center;            /* Centrado */
+  font-size: 14px;               /* Tamaño legible */
+  z-index: 9999;                 /* Por encima de todo */
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.5); /* Sombra opcional */
+}
+
+/* Evita que el contenido quede tapado por el footer */
+.content {
+  padding-bottom: 50px;          /* Ajusta según la altura del footer */
+}
