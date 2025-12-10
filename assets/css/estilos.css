@@ -115,6 +115,7 @@ p {
    ICONOS INDIVIDUALES CON TAMAÑO PERSONALIZADO
    =========================== */
 .social-links a.facebook { width: 28px; height: 28px; }   /* Facebook más pequeño */
+.social-links a.x { width: 28px; height: 28px; }   /* X más pequeño */
 .social-links a.tiktok   { width: 40px; height: 40px; }   /* TikTok más grande */
 .social-links a.instagram{ width: 34px; height: 34px; }   /* Instagram mediano */
 .social-links a.youtube  { width: 38px; height: 38px; }   /* YouTube un poco más grande */
