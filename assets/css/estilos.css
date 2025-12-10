@@ -96,8 +96,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 }
 
 .social-links a svg {
@@ -138,7 +138,7 @@ footer {
   h1 { font-size: 3.5em; }
   p { font-size: 1.2em; }
   .social-links { font-size: 1.5em; gap: 15px; }
-  .social-links a { width: 36px; height: 36px; }
+  .social-links a { width: 32px; height: 32px; }
 }
 
 /* ===========================
@@ -148,5 +148,5 @@ footer {
   h1 { font-size: 2.5em; }
   p { font-size: 1em; }
   .social-links { font-size: 1.2em; gap: 10px; }
-  .social-links a { width: 28px; height: 28px; }
+  .social-links a { width: 24px; height: 24px; }
 }
