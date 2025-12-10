@@ -5,21 +5,21 @@ body {
   background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 70%),
               linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #f0f0f0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  margin: 0;                /* Margen externo del body */
+  padding: 0;               /* Espacio interno del body */
+  color: #f0f0f0;           /* Color del texto */
+  text-align: center;        /* Centra el texto horizontalmente */
+  position: relative;        /* Para capas y pseudo-elementos */
+  overflow: hidden;          /* Evita scroll innecesario */
 }
 
 body::before {
   content: "";
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  position: fixed;           /* Fijo en la ventana */
+  top: -50%;                 /* Posición vertical inicial */
+  left: -50%;                /* Posición horizontal inicial */
+  width: 200%;               /* Ancho del fondo de líneas */
+  height: 200%;              /* Alto del fondo de líneas */
   background:
     repeating-linear-gradient(
       45deg,
@@ -35,9 +35,9 @@ body::before {
       transparent 2px,
       transparent 10px
     );
-  animation: moveLines 20s linear infinite;
-  pointer-events: none;
-  z-index: 0;
+  animation: moveLines 20s linear infinite; /* Animación de movimiento */
+  pointer-events: none;       /* Permite click a elementos debajo */
+  z-index: 0;                 /* Fondo detrás del contenido */
 }
 
 @keyframes moveLines {
@@ -46,15 +46,15 @@ body::before {
 }
 
 .content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  padding-bottom: 100px; /* espacio suficiente para footer + iconos */
+  position: relative;         /* Para capas internas */
+  z-index: 1;                 /* Encima del fondo */
+  display: flex;              /* Contenedor flexible */
+  flex-direction: column;     /* Organiza elementos verticalmente */
+  justify-content: center;    /* Centra verticalmente */
+  align-items: center;        /* Centra horizontalmente */
+  padding: 20px;              /* Espacio interno */
+  box-sizing: border-box;     /* Incluye padding en ancho/alto */
+  padding-bottom: 100px;      /* Espacio para footer + iconos */
 }
 
 /* ===========================
@@ -65,7 +65,7 @@ h1 {
   margin: 0;
   padding: 10px;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-  user-select: none;
+  user-select: none;          /* Evita seleccionar texto */
 }
 
 /* ===========================
@@ -82,52 +82,62 @@ p {
    ENLACES DE REDES SOCIALES
    =========================== */
 .social-links {
-  margin-top: 10px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+  margin-top: 10px;           /* Separación del texto superior */
+  display: flex;               /* Filas flexibles para iconos */
+  gap: 20px;                   /* Espacio entre cada icono */
+  justify-content: center;     /* Centra iconos horizontalmente */
   font-size: 2em;
 }
 
+/* Iconos generales */
 .social-links a {
-  color: #f0f0f0;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
+  color: #f0f0f0;             /* Color del icono */
+  text-decoration: none;       /* Quita subrayado */
+  transition: color 0.3s ease; /* Suaviza cambio de color */
+  display: flex;               /* Centra SVG dentro del enlace */
+  align-items: center;         /* Centrado vertical */
+  justify-content: center;     /* Centrado horizontal */
+  width: 32px;                 /* Tamaño por defecto del contenedor */
   height: 32px;
 }
 
 .social-links a svg {
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
+  width: 100%;                 /* SVG ocupa todo el ancho del contenedor */
+  height: 100%;                /* SVG ocupa toda la altura del contenedor */
+  fill: currentColor;          /* Toma el color del enlace */
 }
 
 .social-links a:hover {
-  color: #ff7e5f;
+  color: #ff7e5f;             /* Cambio de color al pasar el mouse */
 }
+
+/* ===========================
+   ICONOS INDIVIDUALES CON TAMAÑO PERSONALIZADO
+   =========================== */
+.social-links a.facebook { width: 28px; height: 28px; }   /* Facebook más pequeño */
+.social-links a.tiktok   { width: 40px; height: 40px; }   /* TikTok más grande */
+.social-links a.instagram{ width: 34px; height: 34px; }   /* Instagram mediano */
+.social-links a.youtube  { width: 38px; height: 38px; }   /* YouTube un poco más grande */
+.social-links a.spotify  { width: 30px; height: 30px; }   /* Spotify más pequeño */
 
 /* ===========================
    FOOTER FIJO AL FINAL
    =========================== */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 0;
+  position: fixed;              /* Fijo en la pantalla */
+  bottom: 0;                    /* Pegado al borde inferior */
+  left: 0;                      
+  width: 100%;                  
+  padding: 10px 0;              
   background-color: rgba(0, 0, 0, 0.85);
   color: #f0f0f0;
   text-align: center;
   font-size: 14px;
   z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px; /* separación entre texto y iconos */
+  display: flex;               /* Organiza texto + iconos verticalmente */
+  flex-direction: column;      
+  align-items: center;         
+  gap: 8px;                     /* Separación entre texto y iconos */
   box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
 }
 
@@ -138,7 +148,8 @@ footer {
   h1 { font-size: 3.5em; }
   p { font-size: 1.2em; }
   .social-links { font-size: 1.5em; gap: 15px; }
-  .social-links a { width: 32px; height: 32px; }
+  .social-links a { width: 28px; height: 28px; }
+  .social-links a.tiktok { width: 36px; height: 36px; } /* Ajuste individual */
 }
 
 /* ===========================
@@ -149,4 +160,5 @@ footer {
   p { font-size: 1em; }
   .social-links { font-size: 1.2em; gap: 10px; }
   .social-links a { width: 24px; height: 24px; }
+  .social-links a.tiktok { width: 30px; height: 30px; } /* Ajuste individual */
 }
