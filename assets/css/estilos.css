@@ -125,7 +125,7 @@ p {
    FOOTER 
    =========================== */
 footer {
-  position: relative; /* en vez de fixed */
+  position:fixed;
   bottom:0;
   left:0;
   width: 100%;
