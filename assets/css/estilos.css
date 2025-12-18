@@ -122,17 +122,19 @@ p {
 .social-links a.spotify  { width: 30px; height: 30px; }   /* Spotify más pequeño */
 
 /* ===========================
-   FOOTER AUTO-AJUSTABLE
+   FOOTER 
    =========================== */
 footer {
   position: relative; /* en vez de fixed */
-  bottom: auto;
+  bottom:0;
+  left:0;
   width: 100%;
   padding: 10px 0;
   background-color: rgba(0, 0, 0, 0.85);
   color: #f0f0f0;
   text-align: center;
   font-size: 14px;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: center;
