@@ -170,7 +170,7 @@ footer {
    Agregando reproductor de youtube
    ================================ */
 
-.video-1 {
+.video {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
@@ -179,7 +179,7 @@ footer {
   margin: 2rem 0;
 }
 
-.video-1 iframe {
+.video iframe {
   position: absolute;
   top: 0;
   left: 0;
