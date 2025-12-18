@@ -122,23 +122,21 @@ p {
 .social-links a.spotify  { width: 30px; height: 30px; }   /* Spotify más pequeño */
 
 /* ===========================
-   FOOTER FIJO AL FINAL
+   FOOTER AUTO-AJUSTABLE
    =========================== */
 footer {
-  position: fixed;              /* Fijo en la pantalla */
-  bottom: 0;                    /* Pegado al borde inferior */
-  left: 0;                      
-  width: 100%;                  
-  padding: 10px 0;              
+  position: relative; /* en vez de fixed */
+  bottom: auto;
+  width: 100%;
+  padding: 10px 0;
   background-color: rgba(0, 0, 0, 0.85);
   color: #f0f0f0;
   text-align: center;
   font-size: 14px;
-  z-index: 9999;
-  display: flex;               /* Organiza texto + iconos verticalmente */
-  flex-direction: column;      
-  align-items: center;         
-  gap: 8px;                     /* Separación entre texto y iconos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
 }
 
