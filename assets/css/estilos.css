@@ -179,7 +179,7 @@ footer {
   margin: 2rem 0;
 }
 
-.video iframe {
+.video  iframe {
   position: absolute;
   top: 0;
   left: 0;
