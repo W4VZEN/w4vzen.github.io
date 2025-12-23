@@ -120,9 +120,6 @@ h1 {
   border-radius: 10px;  /* Bordes redondeados */
 }
 
-.video {
-  background: red;
-}
 
 /* ===========================
    PÁRRAFOS
@@ -177,7 +174,7 @@ p {
    =========================== */
 .social-links a.facebook { width: 28px; height: 28px; }   /* Facebook más pequeño */
 .social-links a.x { width: 28px; height: 28px; }   /* X más pequeño */
-.social-links a.tiktok   { width: 40px; height: 40px; }   /* TikTok más grande */
+.social-links a.tiktok   { width: 35px; height: 35px; }   /* TikTok más grande */
 .social-links a.instagram{ width: 34px; height: 34px; }   /* Instagram mediano */
 .social-links a.youtube  { width: 38px; height: 38px; }   /* YouTube un poco más grande */
 .social-links a.spotify  { width: 30px; height: 30px; }   /* Spotify más pequeño */
