@@ -1,26 +1,35 @@
 /* ===========================
    ESTILOS GENERALES DEL BODY
    =========================== */
-body {
-  background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 70%),
+body {  
+
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 70%),  /* Fondo combinado con degradado radial + lineal */
               linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;   /* Tipografía base del sitio */
+
+/* Elimina márgenes y rellenos por defecto */
   margin: 0;                /* Margen externo del body */
   padding: 0;               /* Espacio interno del body */
+   
+
   color: #f0f0f0;           /* Color del texto */
   text-align: center;        /* Centra el texto horizontalmente */
-  position: relative;        /* Para capas y pseudo-elementos */
-  overflow: hidden;          /* Evita scroll innecesario */
+  position: relative;        /* Permite posicionar pseudo-elementos */
+  overflow: hidden;           /* Evita barras de scroll innecesarias */
 }
 
-body::before {
+body::before {               /* Capa decorativa animada sobre el fondo */
   content: "";
   position: fixed;           /* Fijo en la ventana */
+   
+/* Posición y tamaño extendido */
   top: -50%;                 /* Posición vertical inicial */
   left: -50%;                /* Posición horizontal inicial */
   width: 200%;               /* Ancho del fondo de líneas */
   height: 200%;              /* Alto del fondo de líneas */
-  background:
+
+   
+  background:                       /* Líneas diagonales decorativas */
     repeating-linear-gradient(
       45deg,
       rgba(255, 255, 255, 0.05),
@@ -35,26 +44,32 @@ body::before {
       transparent 2px,
       transparent 10px
     );
+     /* Animación suave de movimiento */
   animation: moveLines 20s linear infinite; /* Animación de movimiento */
   pointer-events: none;       /* Permite click a elementos debajo */
   z-index: 0;                 /* Fondo detrás del contenido */
 }
 
+/* Animación de fondo */
 @keyframes moveLines {
   0% { transform: translate(0, 0); }
   100% { transform: translate(50px, 50px); }
 }
 
+/* Contenedor principal del contenido */
 .content {
   position: relative;         /* Para capas internas */
   z-index: 1;                 /* Encima del fondo */
+
+ /* Flexbox para centrar elementos */
   display: flex;              /* Contenedor flexible */
   flex-direction: column;     /* Organiza elementos verticalmente */
   justify-content: center;    /* Centra verticalmente */
   align-items: center;        /* Centra horizontalmente */
   padding: 20px;              /* Espacio interno */
   box-sizing: border-box;     /* Incluye padding en ancho/alto */
-  padding-bottom: 100px;      /* Espacio para footer + iconos */
+   
+  padding-bottom: 100px;   /* Espacio extra para footer fijo */
 }
 
 /* ===========================
@@ -64,30 +79,40 @@ h1 {
   font-size: 5em;
   margin: 0;
   padding: 10px;
+   
+    /* Sombra para mejor contraste */
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-  user-select: none;          /* Evita seleccionar texto */
+  user-select: none;            /* Evita selección del texto */
 }
 
 /* ================================
-   Agregando reproductor de youtube
+   REPRODUCTOR DE YOUTUBE
    ================================ */
 
-.video {
+.video {          
+/* Contenedor del iframe */
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;   /* Mantiene relación 16:9 */
+   
+ /* Truco para responsive video */
   height: 0;
+   
+   /* Oculta desbordes */
   overflow: hidden;
   max-width: 100%;
   margin: 2rem 0;
 }
-
+/* iframe de YouTube */
 .video iframe {
   position: absolute;
   top: 0;
   left: 0;
+   
+  /* Ocupa todo el contenedor */
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+   
+  border-radius: 10px;  /* Bordes redondeados */
 }
 
 
@@ -99,6 +124,8 @@ p {
   font-size: 1.5em;
   margin: 20px 0;
   line-height: 1.6;
+   
+/* Sombra ligera para legibilidad */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -125,15 +152,18 @@ p {
   height: 32px;
 }
 
-.social-links a svg {
+/* SVGs dentro de los enlaces */
+.social-links a svg {             
   width: 100%;                 /* SVG ocupa todo el ancho del contenedor */
   height: 100%;                /* SVG ocupa toda la altura del contenedor */
   fill: currentColor;          /* Toma el color del enlace */
 }
 
+/* Hover */
 .social-links a:hover {
   color: #ff7e5f;             /* Cambio de color al pasar el mouse */
 }
+
 
 /* ===========================
    ICONOS INDIVIDUALES CON TAMAÑO PERSONALIZADO
