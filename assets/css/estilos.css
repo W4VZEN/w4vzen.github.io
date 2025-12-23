@@ -166,6 +166,22 @@ p {
   color: #ff7e5f;             /* Cambio de color al pasar el mouse */
 }
 
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  transition: color 0.3s ease;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+
 /* ===========================
    TAMAÑOS INDIVIDUALES POR RED SOCIAL
    =========================== 
