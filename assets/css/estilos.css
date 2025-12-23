@@ -161,6 +161,8 @@ p {
   width: 100%;                 /* SVG ocupa todo el ancho del contenedor */
   height: 100%;                /* SVG ocupa toda la altura del contenedor */
   fill: currentColor;          /* Toma el color del enlace */
+overflow: visible;           /* Evita que partes del icono se corten */
+   
 }
 
 /* Hover */
