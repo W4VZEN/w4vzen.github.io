@@ -152,8 +152,8 @@ p {
   display: flex;               /* Centra SVG dentro del enlace */
   align-items: center;         /* Centrado vertical */
   justify-content: center;     /* Centrado horizontal */
-  width: 32px;                 /* Tamaño por defecto del contenedor */
-  height: 32px;
+  width: 34px;                 /* Tamaño por defecto del contenedor */
+  height: 34px;
 }
 
 /* SVGs dentro de los enlaces */
