@@ -15,7 +15,11 @@ body {
   color: #f0f0f0;           /* Color del texto */
   text-align: center;        /* Centra el texto horizontalmente */
   position: relative;        /* Permite posicionar pseudo-elementos */
-  overflow: hidden;           /* Evita barras de scroll innecesarias */
+
+
+  overflow-x: hidden; /* en vez de overflow: hidden */
+
+ /* overflow: hidden;            Evita barras de scroll innecesarias */
 }
 
 body::before {               /* Capa decorativa animada sobre el fondo */
