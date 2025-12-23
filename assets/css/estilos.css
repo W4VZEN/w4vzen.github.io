@@ -136,7 +136,7 @@ p {
 /* ===========================
    ENLACES DE REDES SOCIALES
    =========================== */
-.social-links {
+#social-links {
   margin-top: 10px;           /* Separación del texto superior */
   display: flex;               /* Filas flexibles para iconos */
   gap: 20px;                   /* Espacio entre cada icono */
@@ -144,7 +144,7 @@ p {
   font-size: 2em;
 }
 
-.social-links a {
+#social-links a {
   color: #f0f0f0;             /* Color del icono */
   text-decoration: none;       /* Quita subrayado */
   transition: color 0.3s ease; /* Suaviza cambio de color */
@@ -155,14 +155,14 @@ p {
   height: 34px;
 }
 
-.social-links a svg {             
+#social-links a svg {             
   width: 100%;                 /* SVG ocupa todo el ancho del contenedor */
   height: 100%;                /* SVG ocupa toda la altura del contenedor */
   fill: currentColor;          /* Toma el color del enlace */
   overflow: visible;           /* Evita que partes del icono se corten */
 }
 
-.social-links a:hover {
+#social-links a:hover {
   color: #ff7e5f;             /* Cambio de color al pasar el mouse */
 }
 
