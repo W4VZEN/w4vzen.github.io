@@ -65,7 +65,11 @@ body::before {               /* Capa decorativa animada sobre el fondo */
  /* Flexbox para centrar elementos */
   display: flex;              /* Contenedor flexible */
   flex-direction: column;     /* Organiza elementos verticalmente */
-  justify-content: center;    /* Centra verticalmente */
+   
+  /*justify-content: center;     Centra verticalmente */
+   
+  justify-content: flex-start;
+   
   align-items: center;        /* Centra horizontalmente */
   padding: 20px;              /* Espacio interno */
   box-sizing: border-box;     /* Incluye padding en ancho/alto */
