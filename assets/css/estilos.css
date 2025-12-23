@@ -136,42 +136,24 @@ p {
 /* ===========================
    ENLACES DE REDES SOCIALES
    =========================== */
+/* Contenedor de todos los iconos */
 #social-links {
-  margin-top: 10px;           /* Separación del texto superior */
-  display: flex;               /* Filas flexibles para iconos */
-  gap: 20px;                   /* Espacio entre cada icono */
-  justify-content: center;     /* Centra iconos horizontalmente */
+  margin-top: 10px;           
+  display: flex;               
+  gap: 20px;                   
+  justify-content: center;     
   font-size: 2em;
 }
 
-#social-links a {
-  color: #f0f0f0;             /* Color del icono */
-  text-decoration: none;       /* Quita subrayado */
-  transition: color 0.3s ease; /* Suaviza cambio de color */
-  display: flex;               /* Centra SVG dentro del enlace */
-  align-items: center;         /* Centrado vertical */
-  justify-content: center;     /* Centrado horizontal */
-  width: 34px;                 /* Tamaño por defecto del contenedor */
-  height: 34px;
-}
-
-#social-links a svg {             
-  width: 100%;                 /* SVG ocupa todo el ancho del contenedor */
-  height: 100%;                /* SVG ocupa toda la altura del contenedor */
-  fill: currentColor;          /* Toma el color del enlace */
-  overflow: visible;           /* Evita que partes del icono se corten */
-}
-
-#social-links a:hover {
-  color: #ff7e5f;             /* Cambio de color al pasar el mouse */
-}
-
+/* Estilos generales de cada icono */
 .icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 34px;
   height: 34px;
+  text-decoration: none;
+  color: #f0f0f0;
   transition: color 0.3s ease;
 }
 
@@ -179,20 +161,15 @@ p {
   width: 100%;
   height: 100%;
   fill: currentColor;
+  overflow: visible;
+}
+
+/* Hover general para todos los iconos */
+.icon:hover {
+  color: #ff7e5f;
 }
 
 
-/* ===========================
-   TAMAÑOS INDIVIDUALES POR RED SOCIAL
-   =========================== 
-.social-links a.facebook { width: 28px; height: 28px; }
-.social-links a.x { width: 28px; height: 28px; }
-.social-links a.tiktok { width: 35px; height: 35px; }
-.social-links a.instagram { width: 34px; height: 34px; }
-.social-links a.youtube { width: 38px; height: 38px; }
-.social-links a.spotify { width: 30px; height: 30px; }
-
-*/
 
 /* ===========================
    FOOTER 
