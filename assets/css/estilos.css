@@ -166,15 +166,17 @@ p {
   color: #ff7e5f;             /* Cambio de color al pasar el mouse */
 }
 
-/* ===========================
+<!-- ===========================
    TAMAÑOS INDIVIDUALES POR RED SOCIAL
-   =========================== */
+   =========================== 
 .social-links a.facebook { width: 28px; height: 28px; }
 .social-links a.x { width: 28px; height: 28px; }
 .social-links a.tiktok { width: 35px; height: 35px; }
 .social-links a.instagram { width: 34px; height: 34px; }
 .social-links a.youtube { width: 38px; height: 38px; }
 .social-links a.spotify { width: 30px; height: 30px; }
+-->
+
 /* ===========================
    FOOTER 
    =========================== */
