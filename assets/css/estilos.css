@@ -142,7 +142,7 @@ p {
    CONTENEDOR GENERAL
    =========================== */
 
-#social-links {
+#social-links {          /* Contenedor de todos los íconos, flexbox, espaciado */
   margin-top: 0.6em;        /* Separación superior */
   display: flex;            /* Coloca iconos en fila */
   gap: 1.25em;              /* Espacio entre iconos */
@@ -159,8 +159,8 @@ p {
   align-items: center;      /* Centrado vertical */
   justify-content: center;  /* Centrado horizontal */
    align-items: center;    /* centrado vertical */
-  width: 1.25em;            /* Tamaño estándar */
-  height: 1.25em;
+  width: 1.20em;            /* Tamaño estándar */
+  height: 1.20em;
   text-decoration: none;    /* Quita subrayado */
  color: rgba(255, 255, 255, 0.5); /* color fijo */
    transition: 
