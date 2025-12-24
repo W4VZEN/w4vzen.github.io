@@ -143,7 +143,7 @@ p {
    =========================== */
 
 #social-links {
-  margin-top: 0.5em;        /* Separación superior */
+  margin-top: 0.6em;        /* Separación superior */
   display: flex;            /* Coloca iconos en fila */
   gap: 1.25em;              /* Espacio entre iconos */
   justify-content: center;  /* Centrado horizontal */
@@ -186,8 +186,8 @@ p {
 
 /* Instagram */
 #instagram {
-  width: 1.35em;
-  height: 1.35em;
+  width: 1.3em;
+  height: 1.3em;
 }
 
 /* YouTube */
