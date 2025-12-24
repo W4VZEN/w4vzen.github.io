@@ -125,10 +125,11 @@ h1 {
    PÁRRAFOS
    =========================== */
 p {
-  font-family: 'Verdana', sans-serif;  /* Fuente clara y legible */
-  font-size: 0.7em;                     /* Más pequeña que el texto normal */
+  font-family: Arial, Helvetica, sans-serif;  /* Fuente clara y legible */
+  font-size: 11px; 
+  margin-top: 25px;
   font-weight: 400;                     /* Normal, no demasiado delgada */
-  color: rgba(255,255,255,0.7);         /* Gris claro semitransparente */
+  color: #808080;        /* Gris claro semitransparente */
   line-height: 1.4;                     /* Espacio entre líneas */
   text-align: center;                    /* Centrado si está al pie */
 
