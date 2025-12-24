@@ -125,7 +125,6 @@ h1 {
    PÁRRAFOS
    =========================== */
 p {
-footer p {
   font-family: 'Verdana', sans-serif;  /* Fuente clara y legible */
   font-size: 0.7em;                     /* Más pequeña que el texto normal */
   font-weight: 400;                     /* Normal, no demasiado delgada */
