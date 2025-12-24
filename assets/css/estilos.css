@@ -113,6 +113,7 @@ h1 {
 }  */
 .video {
   width: 35em;   /* aprox 560px si 1em = 16px */
+  max-width: 100%;
   margin: 0 auto;
   border-radius: 0.625em; 
 }
