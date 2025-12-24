@@ -147,7 +147,7 @@ p {
   display: flex;            /* Coloca iconos en fila */
   gap: 1.25em;              /* Espacio entre iconos */
   justify-content: center;  /* Centrado horizontal */
-  font-size: 2em;           /* Tamaño base global */
+  font-size: 1.6em;           /* Tamaño base global */
 }
 
 /* ===========================
