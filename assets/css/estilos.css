@@ -161,6 +161,9 @@ p {
   width: 1.25em;            /* Tamaño estándar */
   height: 1.25em;
   text-decoration: none;    /* Quita subrayado */
+   transition: 
+               transform 0.3s ease,
+               filter 0.3s ease;
 }
 
 /* El SVG ocupa todo el espacio del icono */
