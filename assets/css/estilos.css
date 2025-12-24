@@ -150,8 +150,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 24px;
+  height: 24px;
   text-decoration: none;
   color: #f0f0f0;
   transition: color 0.3s ease;
