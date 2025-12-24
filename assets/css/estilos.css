@@ -173,6 +173,11 @@ p {
   fill: currentColor;       /* Mantiene color actual */
 }
 
+.icon:hover {
+  transform: scale(1.2);          /* Agranda */
+  filter: brightness(1.3);        /* Más brillo */
+}
+
 /* ===========================
    AJUSTES DE TAMAÑO INDIVIDUALES
    =========================== */
