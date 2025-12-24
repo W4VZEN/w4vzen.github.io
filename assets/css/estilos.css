@@ -125,14 +125,13 @@ h1 {
    PÁRRAFOS
    =========================== */
 p {
-  font-family: Arial, Helvetica, sans-serif;  /* Fuente clara y legible */
-  font-size: 11px; 
-  margin-top: 25px;
-  font-weight: 400;                     /* Normal, no demasiado delgada */
-  color: #808080;        /* Gris claro semitransparente */
-  line-height: 1.4;                     /* Espacio entre líneas */
-  text-align: center;                    /* Centrado si está al pie */
-
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7em;        /* ≈ 11px */
+  margin-top: 1.5em;
+  font-weight: 400;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+  text-align: center;
 }
 
 /* ===========================
@@ -199,7 +198,9 @@ footer {
    =========================== */
 @media (max-width: 768px) {
   h1 { font-size: 3.5em; }
-  p { font-size: 1.2em; }
+  p {   font-size: 0.8em;      /* ≈ 12.8px */
+    line-height: 1.5;
+    margin-top: 1.2em; }
   .social-links { font-size: 1.5em; gap: 15px; }
   .social-links a { width: 28px; height: 28px; }
   .social-links a.tiktok { width: 36px; height: 36px; } /* Ajuste individual */
@@ -210,7 +211,9 @@ footer {
    =========================== */
 @media (max-width: 480px) {
   h1 { font-size: 2.5em; }
-  p { font-size: 1em; }
+  p {font-size: 0.85em;     /* ≈ 13.6px */
+    line-height: 1.6;
+    margin-top: 1em; }
   .social-links { font-size: 1.2em; gap: 10px; }
   .social-links a { width: 24px; height: 24px; }
   .social-links a.tiktok { width: 30px; height: 30px; } /* Ajuste individual */
