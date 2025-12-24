@@ -93,33 +93,15 @@ h1 {
 /* ================================
    REPRODUCTOR DE YOUTUBE
    ================================ */
-
-.video {          
-/* Contenedor del iframe */
-  position: relative;
-  padding-bottom: 56.25%;   /* Mantiene relación 16:9 */
-   
- /* Truco para responsive video */
-  height: 0;
-   
-   /* Oculta desbordes */
-  overflow: hidden;
-  max-width: 100%;
-  margin: 2rem 0;
+.video {
+  width: 35em;   /* aprox 560px si 1em = 16px */
+  margin: 0 auto;
 }
-/* iframe de YouTube */
+
 .video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-   
-  /* Ocupa todo el contenedor */
   width: 100%;
-  height: 100%;
-   
-  border-radius: 10px;  /* Bordes redondeados */
+  height: 19.7em; /* aprox 315px si 1em = 16px */
 }
-
 
 /* ===========================
    PÁRRAFOS
