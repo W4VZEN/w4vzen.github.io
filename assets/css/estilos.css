@@ -246,26 +246,22 @@ footer {
    RESPONSIVE PARA TABLETS
    =========================== */
 @media (max-width: 768px) {
-  h1 { font-size: 3.5em; }
-  p {   font-size: 0.8em;      /* ≈ 12.8px */
-    line-height: 1.5;
-    margin-top: 1.2em; }
-  .social-links { font-size: 1.5em; gap: 15px; }
-  .social-links a { width: 28px; height: 28px; }
-  .social-links a.tiktok { width: 36px; height: 36px; } /* Ajuste individual */
+  /* Contenedor principal */
+  #social-links {
+    font-size: 1.2em;  /* Reducción de tamaño de iconos */
+    gap: 0.8em;        /* Reducción de espacio entre iconos */
+  }
 }
 
 /* ===========================
    RESPONSIVE PARA MÓVILES
    =========================== */
 @media (max-width: 480px) {
-  h1 { font-size: 2.5em; }
-  p {font-size: 0.85em;     /* ≈ 13.6px */
-    line-height: 1.6;
-    margin-top: 1em; }
-  .social-links { font-size: 1.2em; gap: 10px; }
-  .social-links a { width: 24px; height: 24px; }
-  .social-links a.tiktok { width: 30px; height: 30px; } /* Ajuste individual */
+  /* Contenedor principal */
+  #social-links {
+    font-size: 1em;   /* Reducción máxima para móviles */
+    gap: 0.6em;       /* Reducción de espacio */
+  }
 }
 
 
