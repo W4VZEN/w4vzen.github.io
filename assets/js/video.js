@@ -1,13 +1,15 @@
+// Función que carga el iframe de YouTube al hacer clic
 function loadVideo(element) {
+  // Evita recargar si ya fue cargado
   if (element.classList.contains('loaded')) return;
   element.classList.add('loaded');
 
   const videoId = element.dataset.video;
 
-  // Ahora agregamos autoplay=1 y mute=1 para asegurar que el clic reproduzca
+  // Reemplaza el contenido por un iframe
   element.innerHTML = `
     <iframe
-      src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1"
+      src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1&mute=0"
       frameborder="0"
       allow="autoplay; encrypted-media"
       allowfullscreen
@@ -16,29 +18,20 @@ function loadVideo(element) {
   `;
 }
 
-// ================================================
-// Inicialización: agrega eventos de clic y teclado
-// a todos los contenedores de video
-// ================================================
+// Inicialización
 document.addEventListener("DOMContentLoaded", () => {
-
-  // Selecciona todos los contenedores de video
   document.querySelectorAll(".video-container").forEach(video => {
+    video.setAttribute("role", "button");
+    video.setAttribute("tabindex", "0");
 
-    // Accesibilidad: permite que el div se comporte como botón
-    video.setAttribute("role", "button");    // Indica que es un botón
-    video.setAttribute("tabindex", "0");     // Permite enfoque con Tab
-
-    // Evento click: carga el video al hacer clic
+    // Click del mouse
     video.addEventListener("click", () => loadVideo(video));
 
-    // Evento teclado: si se presiona Enter mientras el contenedor está enfocado, carga el video
+    // Enter desde teclado
     video.addEventListener("keydown", e => {
       if (e.key === "Enter") loadVideo(video);
     });
-
   });
-
 });
 
 
