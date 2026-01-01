@@ -2,7 +2,9 @@
 // Función que carga el reproductor de YouTube
 // Recibe como parámetro el contenedor del video clickeado
 function loadVideo(element) {
-
+ if (element.classList.contains('loaded')) return;
+  element.classList.add('loaded');
+  
   // Obtiene el valor del atributo data-video del HTML
   // Ej: data-video="tR6D_-9w538"
   const videoId = element.dataset.video;
@@ -26,21 +28,19 @@ function loadVideo(element) {
 
       allowfullscreen>
       <!-- Permite activar pantalla completa -->
+
+         loading="lazy">
+         
     </iframe>
   `;
 }
+document.querySelectorAll(".video-container").forEach(video => {
+  video.setAttribute("role", "button");
+  video.setAttribute("tabindex", "0");
 
-// Espera a que el HTML esté completamente cargado
-document.addEventListener("DOMContentLoaded", () => {
-
-  // Selecciona todos los contenedores de video
-  document.querySelectorAll(".video-container").forEach(video => {
-
-    // Agrega un evento click a cada contenedor
-    video.addEventListener("click", () => {
-
-      // Llama a la función y carga el video correspondiente
-      loadVideo(video);
-    });
+  video.addEventListener("click", () => loadVideo(video));
+  video.addEventListener("keydown", e => {
+    if (e.key === "Enter") loadVideo(video);
   });
 });
+
