@@ -1,17 +1,21 @@
+---                      /* configuración de jekyll, --- Marca el inicio y el fin de Front Matter */
+layout: default          /* Le dice a jekyll usa el archivo _layoults/default.html como platilla para esta pagina */
+title: W4VZEN           
+---
+
+
+  <!-- Reproductor de YouTube -->
+
 ---
 layout: default
 title: W4VZEN
 ---
 
-
-  <!-- Reproductor de YouTube -->
-<div class="video">
-  <iframe 
-    src="https://www.youtube.com/embed/tR6D_-9w538" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
+<div class="video" data-video="tR6D_-9w538">
+  <img
+    src="https://img.youtube.com/vi/tR6D_-9w538/hqdefault.jpg"
+    alt="Video preview"
+    class="video-thumb"
+  >
+  <div class="play-button"></div>
 </div>
-
