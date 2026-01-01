@@ -112,49 +112,56 @@ h1 {
   border: 0;
 }  */
 .video-container {
-  position: relative;          /* Base para posicionar el botón encima */
-  width: 35em;                 /* ≈ 560px */
-  max-width: 100%;             /* Responsive en pantallas chicas */
-  margin: 0 auto;              /* Centrado horizontal */
-  border-radius: 0.625em;      /* ≈ 10px */
-  cursor: pointer;             /* Mano al pasar el mouse */
-  overflow: hidden;            /* Respeta el borde redondeado */
+  position: relative;
+  width: 100%;
+  max-width: 35em;       /* tamaño máximo */
+  margin: 2em auto;      /* centrado horizontal */
+  border-radius: 0.625em;
+  cursor: pointer;
+  overflow: hidden;
+
+  /* Mantener ratio 16:9 */
+  padding-bottom: 56.25%; /* 9 / 16 */
+  height: 0;
 }
 
-.video-thumb {
-  width: 100%;                 /* Ocupa todo el ancho */
-  display: block;              /* Elimina espacios extra */
+.video-container iframe,
+.video-container .video-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.625em;
+  display: block;
 }
 
-.video-container iframe {
-  width: 100%;                 /* Ancho completo */
-  height: 19.7em;              /* ≈ 315px */
-  border: 0;                   /* Sin borde */
-}
-
-/* Botón play (círculo) */
 .play-button {
-  position: absolute;          /* Se superpone al video */
-  top: 50%;                    /* Centro vertical */
-  left: 50%;                   /* Centro horizontal */
-  width: 5em;                  /* ≈ 80px */
-  height: 5em;                 /* ≈ 80px */
-  background: rgba(0, 0, 0, 0.6); /* Negro semi-transparente */
-  border-radius: 50%;          /* Círculo perfecto */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5em;
+  height: 5em;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
-/* Triángulo ▶ */
 .play-button::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 55%;
   transform: translate(-50%, -50%);
-  border-left: 1.56em solid #fff;   /* ≈ 25px */
-  border-top: 0.94em solid transparent; /* ≈ 15px */
+  border-left: 1.56em solid #fff;
+  border-top: 0.94em solid transparent;
   border-bottom: 0.94em solid transparent;
+}
+
+.video-container:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: rgba(255, 0, 0, 0.85);
 }
 
 /* Efecto hover */
