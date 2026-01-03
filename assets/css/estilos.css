@@ -114,7 +114,7 @@ h1 {
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 30em;       /* tamaño máximo */
+  max-width: 25em;       /* tamaño máximo */
   margin: 2em auto;      /* centrado horizontal */
   border-radius: 0.625em;
   cursor: pointer;
