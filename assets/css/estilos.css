@@ -120,9 +120,8 @@ h1 {
   cursor: pointer;
   overflow: hidden;
 
-  /* Mantener ratio 16:9 */
-  padding-bottom: 56.25%; /* 9 / 16 */
-  height: 0;
+  aspect-ratio: 16 / 9;   /* 🔥 CLAVE */
+  background: #000;
 }
 
 .video-container iframe,
