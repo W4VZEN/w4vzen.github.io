@@ -9,7 +9,7 @@ function loadVideo(element) {
   // Reemplaza el contenido por un iframe
   element.innerHTML = `
     <iframe
-      src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1&mute=0"
+      src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1&mute=1"
       frameborder="0"
       allow="autoplay; encrypted-media"
       allowfullscreen
