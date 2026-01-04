@@ -156,6 +156,10 @@ h1 {
   border-left: 1.56em solid #fff;
   border-top: 0.94em solid transparent;
   border-bottom: 0.94em solid transparent;
+
+  pointer-events: none;
+
+
 }
 
 .video-container:hover .play-button {
