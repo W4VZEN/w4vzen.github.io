@@ -145,6 +145,10 @@ h1 {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: transform 0.3s ease, background 0.3s ease;
+
+
+  pointer-events: none;
+
 }
 
 .play-button::before {
@@ -156,8 +160,6 @@ h1 {
   border-left: 1.56em solid #fff;
   border-top: 0.94em solid transparent;
   border-bottom: 0.94em solid transparent;
-
-  pointer-events: none;
 
 
 }
