@@ -86,7 +86,7 @@ body::before {               /* Capa decorativa animada sobre el fondo */
    =========================== */
 h1 {
   /* Tamaño de fuente responsive con límites usando em y vw */
-   font-family: 'Oswald', Arial, sans-serif;
+  font-family: 'Anton', Arial, sans-serif;
   font-size: clamp(2em, 5vw, 5em); /* mínimo 2em, flexible 5vw, máximo 5em */
 
   /* Márgenes y padding en em */
