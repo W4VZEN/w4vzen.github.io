@@ -80,24 +80,13 @@ body::before {               /* Capa decorativa animada sobre el fondo */
 }
 
 
-/* ===========================
-   TÍTULOS PRINCIPALES
-   =========================== 
-h1 {
-  font-size: 5em;
-  margin: 0;
-  padding: 10px;
-   
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-  user-select: none;          
-} */
-
 
 /* ===========================
    TÍTULOS PRINCIPALES
    =========================== */
 h1 {
   /* Tamaño de fuente responsive con límites usando em y vw */
+   font-family: 'Oswald', Arial, sans-serif;
   font-size: clamp(2em, 5vw, 5em); /* mínimo 2em, flexible 5vw, máximo 5em */
 
   /* Márgenes y padding en em */
@@ -113,24 +102,7 @@ h1 {
 /* ================================
    REPRODUCTOR DE YOUTUBE
    ================================ */
-/* .video-container {
-  position: relative;
-  padding-bottom: 56.25%; 
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  margin: 2em 0; 
-  border-radius: 0.625em; 
-}
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}  */
 .video-container {
   position: relative;
   width: 100%;
