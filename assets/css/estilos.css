@@ -1,6 +1,25 @@
 /* ===========================
    ESTILOS GENERALES DEL BODY
    =========================== */
+
+
+/* Sección hero con canvas */
+.hero-canvas {
+  position: relative;
+  width: 100%;
+  height: 56.25em; /* 100vh ≈ 900px para desktop, opcional usar vh */
+  overflow: hidden;
+  z-index: 1; /* encima del fondo animado del body::before */
+}
+
+/* Canvas dentro del hero */
+#miCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
 body {  
 
   background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 70%),  /* Fondo combinado con degradado radial + lineal */
