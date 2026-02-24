@@ -79,6 +79,7 @@ body::before {               /* Capa decorativa animada sobre el fondo */
   padding-bottom: 100px;   /* Espacio extra para footer fijo */
 }
 
+
 /* ===========================
    TÍTULOS PRINCIPALES
    =========================== 
@@ -87,10 +88,11 @@ h1 {
   margin: 0;
   padding: 10px;
    
-    /* Sombra para mejor contraste */
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-  user-select: none;            /* Evita selección del texto */
+  user-select: none;          
 } */
+
+
 /* ===========================
    TÍTULOS PRINCIPALES
    =========================== */
