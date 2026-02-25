@@ -3,84 +3,34 @@
    =========================== */
 
 
+/* ===========================
+   ESTILOS GENERALES DEL BODY
+   =========================== */
 body {  
-
-  background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 70%),  /* Fondo combinado con degradado radial + lineal */
-              linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  font-family: 'Arial', sans-serif;   /* Tipografía base del sitio */
-
-/* Elimina márgenes y rellenos por defecto */
-  margin: 0;                /* Margen externo del body */
-  padding: 0;               /* Espacio interno del body */
-   
-
-  color: #f0f0f0;           /* Color del texto */
-  text-align: center;        /* Centra el texto horizontalmente */
-  position: relative;        /* Permite posicionar pseudo-elementos */
-
-overflow-x: hidden;   
-overflow-y: auto;   /* para hacer scroll vertical */
+  background: transparent;    /* Sin degradado ni color de fondo */
+  color: #f0f0f0;           
+  margin: 0;                
+  padding: 0;               
+  font-family: 'Arial', sans-serif;
+  text-align: center;        
+  position: relative;        
+  overflow-x: hidden;   
+  overflow-y: auto;   
 }
 
-body::before {               /* Capa decorativa animada sobre el fondo */
-  content: "";
-  position: fixed;           /* Fijo en la ventana */
-   
-/* Posición y tamaño extendido */
-  top: -50%;                 /* Posición vertical inicial */
-  left: -50%;                /* Posición horizontal inicial */
-  width: 200%;               /* Ancho del fondo de líneas */
-  height: 200%;              /* Alto del fondo de líneas */
-
-   
-  background:                       /* Líneas diagonales decorativas */
-    repeating-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.05) 2px,
-      transparent 2px,
-      transparent 10px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.05) 2px,
-      transparent 2px,
-      transparent 10px
-    );
-     /* Animación suave de movimiento */
-  animation: moveLines 20s linear infinite; /* Animación de movimiento */
-  pointer-events: none;       /* Permite click a elementos debajo */
-  z-index: 0;                 /* Fondo detrás del contenido */
-}
-
-/* Animación de fondo */
-@keyframes moveLines {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
-}
 
 /* Contenedor principal del contenido */
 .content {
-  position: relative;         /* Para capas internas */
-  z-index: 1;                 /* Encima del fondo */
-
- /* Flexbox para centrar elementos */
-  display: flex;              /* Contenedor flexible */
-  flex-direction: column;     /* Organiza elementos verticalmente */
-   
-  /*justify-content: center;     Centra verticalmente */
-   
+  position: relative; 
+  z-index: 1; 
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-   
-  align-items: center;        /* Centra horizontalmente */
-  padding: 20px;              /* Espacio interno */
-  box-sizing: border-box;     /* Incluye padding en ancho/alto */
-   
-  padding-bottom: 100px;   /* Espacio extra para footer fijo */
+  align-items: center;
+  padding: 1.25em;      /* antes 20px */
+  box-sizing: border-box;
+  padding-bottom: 6.25em; /* antes 100px */
 }
-
-
 
 /* ===========================
    TÍTULOS PRINCIPALES
