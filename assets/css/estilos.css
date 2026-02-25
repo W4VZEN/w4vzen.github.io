@@ -9,20 +9,15 @@
   box-sizing: border-box;
 }
 
-
 /* ===========================
-   ESTILOS GENERALES DEL BODY
+   BODY GENERAL
    =========================== */
-body {  
-  background: #000;          /* Fondo negro */
-  color: #f0f0f0;           
-  margin: 0;                
-  padding: 0;               
-  font-family: 'Arial', sans-serif;
-  text-align: center;        
-  position: relative;        
-  overflow-x: hidden;   
-  overflow-y: auto;   
+body {
+  background: #000;
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 
