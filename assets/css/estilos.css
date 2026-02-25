@@ -283,6 +283,16 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .hero-video {
+    height: 60vh; /* reducimos altura en tablets */
+  }
+}
 
+@media (max-width: 480px) {
+  .hero-video {
+    height: 50vh; /* reducimos más altura en móviles */
+  }
+}
 
 
