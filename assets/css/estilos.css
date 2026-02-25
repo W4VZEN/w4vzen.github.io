@@ -209,17 +209,6 @@ footer {
 
 
 /* ===========================
-   RESPONSIVE PARA TABLETS
-   =========================== */
-@media (max-width: 768px) {
-  /* Contenedor principal */
-  #social-links {
-    font-size: 1.2em;  /* Reducción de tamaño de iconos */
-    gap: 0.8em;        /* Reducción de espacio entre iconos */
-  }
-}
-
-/* ===========================
    RESPONSIVE
    =========================== */
 @media (max-width: 768px) {
