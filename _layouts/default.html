@@ -31,19 +31,11 @@
 
 <body>  <!-- Contenido visible de la página. -->
 
-  {% include header.html %} <!-- Instrucción de Jekyll. Inserta el archivo _includes/header.html aquí. Normalmente contiene el menú o encabezado. -->
+  {% include header.html %}
 
-  <main class="content" role="main">
-    <!--
-      Contenedor principal del contenido.
-      class="content" permite estilizar con CSS.
-      role="main" mejora accesibilidad.
-    -->
+  {{ content }}
 
-    {{ content }}  <!-- MUY IMPORTANTE: Aquí Jekyll inserta el contenido de index.md, posts, páginas, etc. Sin esto, no se muestra nada. -->
-  </main>
-
-  {% include footer.html %}  <!-- Inserta el archivo _includes/footer.html. Normalmente contiene el pie de página. -->
+  {% include footer.html %}
 
 
   <!-- JavaScript -->
