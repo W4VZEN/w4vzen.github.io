@@ -70,6 +70,16 @@ h1 {
 /* ===========================
    REPRODUCTOR DE YOUTUBE
    =========================== */
+.video-section {
+  background-color: #fff;      /* fondo blanco */
+  padding: 3em 1em;            /* espacio interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;                     /* espacio entre videos */
+  color: #000;                  /* texto negro */
+}
+
 
 .section-title {
   font-family: 'Anton', Arial, sans-serif;
@@ -81,9 +91,10 @@ h1 {
 .video-title {
   font-family: 'Anton', Arial, sans-serif;
   font-size: 1.8em;
-  margin-top: 2.5em;
+  margin-top: 2em;
   margin-bottom: 0.5em;
   text-transform: uppercase;
+  color: #000;
 }
 
 .video-container {
