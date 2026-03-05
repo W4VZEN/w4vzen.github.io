@@ -32,7 +32,7 @@ body {
   align-items: center;
   padding: 1.25em;
   box-sizing: border-box;
-  padding-bottom: 10em;
+  padding-bottom: 12em;
 }
 
 /* ===========================
@@ -78,7 +78,7 @@ h1 {
   width: 100%;
   max-width: 30em;
   /*margin: 2em auto;*/
-  margin: 3em auto 8em auto;
+  margin: 10em;
   border-radius: 0.625em;
   cursor: pointer;
   overflow: hidden;
