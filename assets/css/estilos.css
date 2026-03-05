@@ -21,15 +21,11 @@ body {
 
 /* Contenedor principal del contenido */
 .content {
-  position: relative; 
-  z-index: 1; 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1.25em;
+  width: 100%;       /* ocupa todo el ancho */
+  max-width: 100%;   /* elimina cualquier límite */
+  margin: 0;         /* elimina márgenes automáticos */
+  padding: 1.25em;   /* puedes mantener padding interno */
   box-sizing: border-box;
-  padding-bottom: 6.25em;
 }
 
 /* ===========================
