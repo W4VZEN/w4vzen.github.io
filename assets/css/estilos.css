@@ -73,6 +73,15 @@ h1 {
 /* ===========================
    REPRODUCTOR DE YOUTUBE
    =========================== */
+
+.video-title {
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: 1.8em;
+  margin-top: 2.5em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
 .video-container {
   position: relative;
   width: 100%;
