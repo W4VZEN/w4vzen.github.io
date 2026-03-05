@@ -71,6 +71,13 @@ h1 {
    REPRODUCTOR DE YOUTUBE
    =========================== */
 
+.section-title {
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: clamp(2em, 5vw, 4em);
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
 .video-title {
   font-family: 'Anton', Arial, sans-serif;
   font-size: 1.8em;
