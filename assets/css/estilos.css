@@ -99,7 +99,7 @@ h1 {
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 30em;
+  max-width: 40em;
   margin: 2em auto;
   border-radius: 0;
   cursor: pointer;
