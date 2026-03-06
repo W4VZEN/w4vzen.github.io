@@ -267,13 +267,35 @@ footer {
    RESPONSIVE
    =========================== */
 @media (max-width: 768px) {
+
   #social-links {
     font-size: 1.2em;
     gap: 0.8em;
   }
+
   .hero-video {
     height: 60vh;
   }
+
+  /* layout de lanzamientos en vertical */
+  .release {
+    flex-direction: column;
+    gap: 1em;
+    margin: 2em auto;
+  }
+
+  .release:nth-of-type(even) {
+    flex-direction: column;
+  }
+
+  .release .video-title {
+    text-align: center;
+  }
+
+  .video-container {
+    max-width: 100%;
+  }
+
 }
 
 @media (max-width: 480px) {
