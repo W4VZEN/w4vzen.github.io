@@ -74,7 +74,7 @@ h1 {
 
   max-width: 70em;   /* limita el ancho del contenido */
   width: 100%;
-  margin: 2em auto;  /* centra el bloque */
+  margin: 1em auto;  /* centra el bloque */
 }
 
 /* tamaño del video */
@@ -289,9 +289,10 @@ footer {
   }
 
   .release .video-title {
-    text-align: center;
+    font-size: 1.6em;       /* más pequeño que el título principal */
+    margin-top: 0.5em;      /* espacio mínimo sobre el título */
+    text-align: center;     /* ya estaba centrado */
   }
-
   .video-container {
     max-width: 100%;
   }
