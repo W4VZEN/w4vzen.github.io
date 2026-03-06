@@ -87,7 +87,10 @@ h1 {
   font-size: 2.5em;
   text-align: left;
 }
-
+/* segundo bloque invertido */
+.release:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
 .video-section {
   background-color: #fff;
   width: 100vw;                     /* ancho total de pantalla */
