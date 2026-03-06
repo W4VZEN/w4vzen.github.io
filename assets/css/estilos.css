@@ -288,14 +288,16 @@ footer {
     flex-direction: column;
   }
 
-  .release .video-title {
-    font-size: 1.6em;       /* más pequeño que el título principal */
-    margin-top: 0.5em;      /* espacio mínimo sobre el título */
-    text-align: center;     /* ya estaba centrado */
-  }
-  .video-container {
-    max-width: 100%;
-  }
+.release .video-title {
+  font-size: 1.2em;
+  margin-top: 0.3em;   /* un poco más pegado al video */
+  margin-bottom: 1em;  /* espacio debajo del título antes del siguiente video */
+  text-align: center;
+}
+ .video-container {
+  max-width: 95%;
+  margin: 0 auto;
+}
 
 }
 
