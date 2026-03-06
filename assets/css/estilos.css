@@ -75,6 +75,19 @@ h1 {
   margin: 4em 0;
 }
 
+/* tamaño del video */
+.release .video-container {
+  flex: 1.2;
+  max-width: 40em;
+}
+
+/* título */
+.release .video-title {
+  flex: 1;
+  font-size: 2.5em;
+  text-align: left;
+}
+
 .video-section {
   background-color: #fff;
   width: 100vw;                     /* ancho total de pantalla */
