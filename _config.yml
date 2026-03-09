@@ -1,6 +1,7 @@
 
-title: W4VZEN
-description: Descubre nueva música, videos, próximos lanzamientos y contenido exclusivo de W4VZEN.
+site_title_short: W4VZEN
+site_title_seo: W4VZEN – Música, Lanzamientos, Videos y Noticias Oficiales
+site_description_seo: Descubre música, videos, próximos lanzamientos y contenido exclusivo de W4VZEN.
 url: "https://www.w4vzen.com.ar"
 baseurl: "" # Déjalo así si estás en el root del dominio
 plugins:
