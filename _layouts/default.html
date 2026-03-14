@@ -11,7 +11,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="{{ page.title | default: site_title_seo }}">
   <meta property="og:description" content="{{ page.description | default: site_description_seo }}">
-  <meta property="og:image" content="{{ '/assets/img/social-preview.jpg' | relative_url | absolute_url }}">
+  <meta property="og:image" content="{{ page.image | default: '/assets/img/social-preview.png' | relative_url | absolute_url }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:type" content="website">
 
@@ -19,7 +19,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title | default: site_title_seo }}">
   <meta name="twitter:description" content="{{ page.description | default: site_description_seo }}">
-  <meta name="twitter:image" content="{{ '/assets/img/social-preview.jpg' | relative_url | absolute_url }}">
+  <meta name="twitter:image" content="{{ page.image | default: '/assets/img/social-preview.png' | relative_url | absolute_url }}">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ '/assets/img/favicons/favicon-96x96.png' | relative_url }}" sizes="96x96" />
