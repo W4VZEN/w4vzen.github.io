@@ -95,8 +95,8 @@ h1 {
 
 .video-section {
   background-color: #fff;
-  width: 100vw;                     /* ancho total de pantalla */
-  margin-left: calc(50% - 50vw);    /* rompe el contenedor */
+  width: 100%;
+  margin-left: 0;
   padding: 3em 1em;
 
   display: flex;
