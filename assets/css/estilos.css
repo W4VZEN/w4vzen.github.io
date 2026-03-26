@@ -100,8 +100,7 @@ h1 {
 }
 
 .video-section {
-  /*background-color: #fff;*/
-    background: blue;
+  background-color: #fff;
   width: 100vw;                     /* ancho total de pantalla */
   margin-left: calc(50% - 50vw);    /* rompe el contenedor */
   padding: 3em 1em;
@@ -110,7 +109,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 2em;
-
   color: #000;
 }
 
