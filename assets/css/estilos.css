@@ -10,15 +10,7 @@
 /* ===========================
    BODY GENERAL
    =========================== */
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   background: #000;
   color: #f0f0f0;
   font-family: Arial, sans-serif;
@@ -26,17 +18,16 @@ body {
   overflow-x: hidden;
 }
 
-/* ===========================
-   CONTENEDOR PRINCIPAL
-   =========================== */
+
+/* Contenedor principal del contenido */
 .content {
-  flex: 1; /* ocupa el espacio entre hero y footer */
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 1.25em;
+  width: 100%;       /* ocupa todo el ancho */
+  max-width: 100%;   /* elimina cualquier límite */
+  margin: 0;         /* elimina márgenes automáticos */
+  padding: 1.25em;   /* puedes mantener padding interno */
   box-sizing: border-box;
 }
+
 
 /* ===========================
    TÍTULOS PRINCIPALES
