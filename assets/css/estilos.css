@@ -50,7 +50,6 @@ h1 {
   height: 100vh;
   overflow: hidden;
 
-  background: red;
 }
 .hero-video video {
   position: absolute;
