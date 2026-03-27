@@ -24,7 +24,7 @@ body {
   width: 100%;       /* ocupa todo el ancho */
   max-width: 100%;   /* elimina cualquier límite */
   margin: 0;         /* elimina márgenes automáticos */
-  padding: 1.25em;   /* puedes mantener padding interno */
+  padding: 0 1.25em 1.25em 1.25em;
   box-sizing: border-box;
 }
 
