@@ -37,7 +37,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Anton', Arial, sans-serif;
   font-size: clamp(3em, 6vw, 6em);
   text-shadow: 0.25em 0.25em 0.5em rgba(0,0,0,0.7);
   pointer-events: none;
