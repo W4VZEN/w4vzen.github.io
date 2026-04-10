@@ -30,6 +30,8 @@ body {
 
 .hero-title {
    
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,8 +42,6 @@ body {
   text-shadow: 0.25em 0.25em 0.5em rgba(0,0,0,0.7);
   pointer-events: none;
 
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 
