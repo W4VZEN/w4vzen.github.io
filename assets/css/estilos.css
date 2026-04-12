@@ -203,6 +203,78 @@ p {
   text-align: center;
 }
 
+
+/* ===========================
+   NAVBAR SUPERIOR
+   =========================== */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5em;
+  padding: 0 2em;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: 1.4em;
+  letter-spacing: 0.2em;
+}
+
+/* MENÚ CENTRADO REAL */
+.menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2em;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.85em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #fff;
+}
+
+/* ICONOS DERECHA */
+.social-nav {
+  display: flex;
+  gap: 1em;
+}
+
+.social-nav a {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1em;
+  transition: 0.3s;
+}
+
+.social-nav a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+
+
+
 /* ===========================
    ENLACES DE REDES SOCIALES
    =========================== */
