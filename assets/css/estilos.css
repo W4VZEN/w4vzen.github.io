@@ -385,5 +385,18 @@ footer {
   .hero-video {
     height: 50vh;
   }
+
+   .topbar {
+  padding: 0 1em;
+}
+
+.menu {
+  gap: 1em;
+  font-size: 0.75em;
+}
+
+.social-nav {
+  gap: 0.6em;
+}
 }
 
