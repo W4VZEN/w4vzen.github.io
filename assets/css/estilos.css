@@ -218,11 +218,13 @@ p {
 }
 
 /* MENÚ CENTRADO REAL */
+
 .menu {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static; /* 👈 IMPORTANTE */
+  transform: none;
+
   display: flex;
+  justify-content: center;
   gap: 2em;
 }
 
