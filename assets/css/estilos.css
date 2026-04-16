@@ -28,13 +28,6 @@ body {
   box-sizing: border-box;
 }
 
-.hero-video::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.2);
-  z-index: 1;
-}
 
 /* ===========================
    HERO VIDEO SUPERIOR
