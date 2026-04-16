@@ -212,12 +212,9 @@ p {
 .topbar-inner {
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  gap: 3em;
-
+  justify-content: space-between; 
   width: 100%;
-  max-width: 60em;   /* controla el “bloque centrado” */
+  max-width: 60em;  
 }
 
 /* LOGO */
@@ -226,6 +223,7 @@ p {
   font-family: 'Anton', Arial, sans-serif;
   font-size: 1.4em;
   letter-spacing: 0.2em;
+  margin-right: 2em;
 }
 
 /* MENÚ CENTRADO REAL */
@@ -258,6 +256,7 @@ p {
   
   display: flex;
   gap: 1em;
+  margin-left: 2em;
 }
 
 .social-nav a {
