@@ -213,6 +213,7 @@ p {
 /* LOGO */
 .logo {
   font-family: 'Anton', Arial, sans-serif;
+  justify-self: center;
   font-size: 1.4em;
   letter-spacing: 0.2em;
 }
