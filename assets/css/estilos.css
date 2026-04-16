@@ -241,6 +241,7 @@ p {
 
 /* ICONOS DERECHA */
 .social-nav {
+  justify-self: center;
   display: flex;
   gap: 1em;
 }
