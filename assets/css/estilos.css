@@ -388,6 +388,8 @@ footer {
 
    .topbar {
   padding: 0 1em;
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .menu {
