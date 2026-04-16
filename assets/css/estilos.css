@@ -28,6 +28,19 @@ body {
   box-sizing: border-box;
 }
 
+.hero-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.7)
+  );
+  z-index: 1;
+}
+
+
 .hero-title {
    
   text-transform: uppercase;
