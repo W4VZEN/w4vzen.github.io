@@ -241,7 +241,9 @@ p {
   text-decoration: none;
   color: rgba(255,255,255,0.85);
   font-size: 0.85em;
-  letter-spacing: 0.15em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   transition: 0.3s;
 }
