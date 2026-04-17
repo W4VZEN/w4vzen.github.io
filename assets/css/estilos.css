@@ -236,7 +236,13 @@ p {
   justify-content: center;
   gap: 3em;
 }
-
+/* agrupa los links */
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
 .menu a {
   text-decoration: none;
   color: rgba(255,255,255,0.85);
