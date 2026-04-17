@@ -342,18 +342,86 @@ footer {
 /* ===========================
    RESPONSIVE
    =========================== */
-@media (max-width: 768px) {
+@media (max-width: 48em) { /* 768px */
 
-  #social-links {
-    font-size: 1.2em;
-    gap: 0.8em;
-  }
-
+  /* HERO FULLSCREEN */
   .hero-video {
-    height: 60vh;
+    height: 100vh;
+    height: 100dvh;
   }
 
-  /* layout de lanzamientos en vertical */
+  /* LOGO FIJO ARRIBA */
+  .logo {
+    position: fixed;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1100;
+    font-size: 1.9em;
+  }
+
+  /* BOTÓN HAMBURGUESA */
+  .menu-toggle {
+    display: block;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  /* TOPBAR TRANSPARENTE */
+  .topbar {
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0 1em;
+    height: 5em;
+  }
+
+  .topbar-inner {
+    justify-content: space-between;
+  }
+
+  /* MENÚ FULLSCREEN */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+
+    background: rgba(0,0,0,0.95);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+
+    z-index: 1050;
+  }
+
+  .menu.active {
+    transform: translateY(0);
+  }
+
+  .menu a {
+    font-size: 1.5em;
+    letter-spacing: 0.08em;
+  }
+
+  /* REDES ABAJO */
+  .social-nav {
+    position: absolute;
+    bottom: 2em;
+    display: flex;
+    gap: 1.5em;
+    font-size: 1.3em;
+  }
+
+  /* LANZAMIENTOS */
   .release {
     flex-direction: column;
     gap: 1em;
@@ -364,41 +432,33 @@ footer {
     flex-direction: column;
   }
 
-.release .video-title {
-  font-size: 1.2em;
-  margin-top: 0.3em;   /* un poco más pegado al video */
-  margin-bottom: 1em;  /* espacio debajo del título antes del siguiente video */
-  text-align: center;
-}
- .video-container {
-  max-width: 95%;
-  margin: 0 auto;
+  .release .video-title {
+    font-size: 1.2em;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  .video-container {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  /* ICONOS GENERALES */
+  #social-links {
+    font-size: 1.2em;
+    gap: 0.8em;
+  }
 }
 
-}
 
-@media (max-width: 480px) {
+/* EXTRA CHICO */
+@media (max-width: 30em) { /* 480px */
+
   #social-links {
     font-size: 1em;
     gap: 0.6em;
   }
-  .hero-video {
-    height: 50vh;
-  }
 
-   .topbar {
-  padding: 0 1em;
-  background: transparent;
-  backdrop-filter: none;
-}
-
-.menu {
-  gap: 1em;
-  font-size: 0.75em;
-}
-
-.social-nav {
-  gap: 0.6em;
-}
 }
 
