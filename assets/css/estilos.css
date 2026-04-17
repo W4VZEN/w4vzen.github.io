@@ -235,6 +235,10 @@ p {
   color: #fff;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 /* SOCIAL NAV */
 .social-nav {
   display: flex;
