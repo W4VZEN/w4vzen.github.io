@@ -18,28 +18,25 @@ body {
   overflow-x: hidden;
 }
 
-
 /* Contenedor principal del contenido */
 .content {
-  width: 100%;       /* ocupa todo el ancho */
-  max-width: 100%;   /* elimina cualquier límite */
-  margin: 0;         /* elimina márgenes automáticos */
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   padding: 0 1.25em 1.25em 1.25em;
   box-sizing: border-box;
 }
 
-
 /* ===========================
    HERO VIDEO SUPERIOR
    =========================== */
-
 .hero-video {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-
 }
+
 .hero-video video {
   position: absolute;
   top: 50%;
@@ -53,33 +50,29 @@ body {
   display: block;
 }
 
-
 /* ===========================
    REPRODUCTOR DE YOUTUBE
    =========================== */
-
 .release {
   display: flex;
   align-items: center;
   gap: 4em;
-
-  max-width: 70em;   /* limita el ancho del contenido */
+  max-width: 70em;
   width: 100%;
-  margin: 1em auto;  /* centra el bloque */
+  margin: 1em auto;
 }
 
-/* tamaño del video */
 .release .video-container {
   flex: 1.2;
   max-width: 40em;
 }
 
-/* título */
 .release .video-title {
   flex: 1;
   font-size: 2.5em;
   text-align: left;
 }
+
 .release:nth-of-type(even) {
   flex-direction: row-reverse;
 }
@@ -88,19 +81,20 @@ body {
   text-align: right;
 }
 
+/* ===========================
+   VIDEO SECTION
+   =========================== */
 .video-section {
   background-color: #fff;
-  width: 100vw;                     /* ancho total de pantalla */
-  margin-left: calc(50% - 50vw);    /* rompe el contenedor */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   padding: 3em 1em;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2em;
   color: #000;
 }
-
 
 .section-title {
   font-family: 'Anton', Arial, sans-serif;
@@ -139,7 +133,7 @@ body {
   height: 100%;
   border-radius: 0;
   display: block;
-  object-fit: cover;  
+  object-fit: cover;
 }
 
 .play-button {
@@ -166,13 +160,10 @@ body {
   border-bottom: 0.94em solid transparent;
 }
 
-/* Efecto hover */
 .video-container:hover .play-button {
   transform: translate(-50%, -50%) scale(1.15);
   background: rgba(255, 0, 0, 0.85);
 }
-
-
 
 /* ===========================
    PÁRRAFOS
@@ -187,38 +178,32 @@ p {
   text-align: center;
 }
 
-
 /* ===========================
    NAVBAR SUPERIOR
    =========================== */
-
 .topbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 5em;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(0.4em);
-
   z-index: 1000;
 }
 
 .topbar-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   width: 100%;
-  max-width: 60em;  
+  max-width: 60em;
 }
 
 /* LOGO */
-
 .logo {
   font-family: 'Anton', Arial, sans-serif;
   font-size: 1.9em;
@@ -226,23 +211,15 @@ p {
   margin-right: 2em;
 }
 
-/* MENÚ CENTRADO REAL */
-
+/* MENÚ */
 .menu {
-  position: static; 
+  position: static;
   transform: none;
-
   display: flex;
   justify-content: center;
   gap: 3em;
 }
-/* agrupa los links */
-.menu-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2em;
-}
+
 .menu a {
   text-decoration: none;
   color: rgba(255,255,255,0.85);
@@ -258,10 +235,8 @@ p {
   color: #fff;
 }
 
-/* ICONOS DERECHA */
-
+/* SOCIAL NAV */
 .social-nav {
-  
   display: flex;
   gap: 1em;
   margin-left: 2em;
@@ -278,19 +253,15 @@ p {
   transform: scale(1.1);
 }
 
-
-
-
 /* ===========================
-   ENLACES DE REDES SOCIALES
+   SOCIAL LINKS
    =========================== */
-
-#social-links {          /* Contenedor de todos los íconos, flexbox, espaciado */
-  margin-top: 0.6em;        /* Separación superior */
-  display: flex;            /* Coloca iconos en fila */
-  gap: 1.25em;              /* Espacio entre iconos */
-  justify-content: center;  /* Centrado horizontal */
-  font-size: 1.6em;           /* Tamaño base global */
+#social-links {
+  margin-top: 0.6em;
+  display: flex;
+  gap: 1.25em;
+  justify-content: center;
+  font-size: 1.6em;
 }
 
 .icon {
@@ -304,12 +275,10 @@ p {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* El SVG ocupa todo el espacio del icono */
-
 .icon svg {
   width: 100%;
   height: 100%;
-  fill: currentColor;       /* Mantiene color actual */
+  fill: currentColor;
 }
 
 .icon:hover {
@@ -318,116 +287,45 @@ p {
   color: rgba(255, 255, 255, 1);
 }
 
-/* Ajustes de tamaño individual por red social o plataforma */
+/* ICONOS INDIVIDUALES */
 #instagram { width: 1.25em; height: 1.25em; }
 #youtube   { width: 1.45em; height: 1.45em; }
-#facebook  { width: 1.3em;  height: 1.3em; }
+#facebook  { width: 1.3em; height: 1.3em; }
 #tiktok    { width: 1.25em; height: 1.25em; }
 #x         { width: 1.25em; height: 1.25em; }
-#spotify   { width: 1.3em;  height: 1.3em; }
+#spotify   { width: 1.3em; height: 1.3em; }
 
 /* ===========================
    FOOTER
    =========================== */
 footer {
   width: 100%;
-  padding: 0.625em 0; /* 10px */
+  padding: 0.625em 0;
   background-color: rgba(0,0,0,0.85);
   color: #f0f0f0;
   text-align: center;
-  font-size: 0.875em; /* 14px */
+  font-size: 0.875em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5em; /* 8px */
-  box-shadow: 0 -0.125em 0.625em rgba(0,0,0,0.5); /* 2px 10px */
+  gap: 0.5em;
+  box-shadow: 0 -0.125em 0.625em rgba(0,0,0,0.5);
 }
-
-
 
 /* ===========================
    RESPONSIVE
    =========================== */
-@media (max-width: 48em) { /* 768px */
+@media (max-width: 768px) {
 
-  /* HERO FULLSCREEN */
+  #social-links {
+    font-size: 1.2em;
+    gap: 0.8em;
+  }
+
   .hero-video {
-    height: 100vh;
-    height: 100dvh;
+    height: 60vh;
   }
 
-  /* LOGO FIJO ARRIBA */
-  .logo {
-    position: fixed;
-    top: 1em;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1100;
-    font-size: 1.9em;
-  }
-
-  /* BOTÓN HAMBURGUESA */
-  .menu-toggle {
-    display: block;
-    font-size: 1.5em;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1100;
-  }
-
-  /* TOPBAR TRANSPARENTE */
-  .topbar {
-    background: transparent;
-    backdrop-filter: none;
-    padding: 0 1em;
-    height: 5em;
-  }
-
-  .topbar-inner {
-    justify-content: space-between;
-  }
-
-  /* MENÚ FULLSCREEN */
-  .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh;
-
-    background: rgba(0,0,0,0.95);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-
-    transform: translateY(-100%);
-    transition: transform 0.4s ease;
-
-    z-index: 1050;
-  }
-
-  .menu.active {
-    transform: translateY(0);
-  }
-
-  .menu a {
-    font-size: 1.5em;
-    letter-spacing: 0.08em;
-  }
-
-  /* REDES ABAJO */
-  .social-nav {
-    position: absolute;
-    bottom: 2em;
-    display: flex;
-    gap: 1.5em;
-    font-size: 1.3em;
-  }
-
-  /* LANZAMIENTOS */
   .release {
     flex-direction: column;
     gap: 1em;
@@ -449,22 +347,32 @@ footer {
     max-width: 95%;
     margin: 0 auto;
   }
-
-  /* ICONOS GENERALES */
-  #social-links {
-    font-size: 1.2em;
-    gap: 0.8em;
-  }
 }
 
-
-/* EXTRA CHICO */
-@media (max-width: 30em) { /* 480px */
+@media (max-width: 480px) {
 
   #social-links {
     font-size: 1em;
     gap: 0.6em;
   }
 
+  .hero-video {
+    height: 50vh;
+  }
+
+  .topbar {
+    padding: 0 1em;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .menu {
+    gap: 1em;
+    font-size: 0.75em;
+  }
+
+  .social-nav {
+    gap: 0.6em;
+  }
 }
 
