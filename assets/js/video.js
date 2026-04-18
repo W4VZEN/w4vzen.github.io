@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     element.innerHTML = `
       <iframe
-        src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1&mute=1"
+        src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1&mute=0"
         frameborder="0"
         allow="autoplay; encrypted-media"
         allowfullscreen>
