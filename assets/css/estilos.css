@@ -358,11 +358,12 @@ footer {
   cursor: pointer;
   margin-left: 1em;
 }
+
 /* ===========================
    NAV WRAPPER (MOBILE MENU)
 =========================== */
 .nav-wrapper {
-  display: flex;
+  display: contents;
   align-items: center;
   gap: 2em;
 }
