@@ -363,7 +363,7 @@ footer {
    NAV WRAPPER (MOBILE MENU)
 =========================== */
 .nav-wrapper {
-  display: contents;
+  display: flex;
   align-items: center;
   gap: 2em;
 }
@@ -429,7 +429,7 @@ footer {
     align-items: center;
 
     gap: 2em;
-    z-index: 999;
+    z-index: 1001;
   }
 
   .nav-wrapper.active {
