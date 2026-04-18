@@ -2,7 +2,6 @@
 function loadVideo(element) {
   // Evita recargar si ya fue cargado
   if (element.classList.contains('loaded')) return;
-
   element.classList.add('loaded');
 
   const videoId = element.dataset.video;
@@ -22,7 +21,6 @@ function loadVideo(element) {
 // Inicialización
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".video-container").forEach(video => {
-
     video.setAttribute("role", "button");
     video.setAttribute("tabindex", "0");
 
@@ -33,6 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
     video.addEventListener("keydown", e => {
       if (e.key === "Enter") loadVideo(video);
     });
-
   });
 });
