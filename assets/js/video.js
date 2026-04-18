@@ -1,4 +1,39 @@
-// Función que carga el iframe de YouTube al hacer clic
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===========================
+     MENU HAMBURGUESA
+  =========================== */
+
+  const hamburger = document.getElementById("hamburger");
+  const navWrapper = document.getElementById("navWrapper");
+
+  if (hamburger && navWrapper) {
+
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      navWrapper.classList.toggle("active");
+
+      document.body.style.overflow =
+        navWrapper.classList.contains("active") ? "hidden" : "";
+    });
+
+    // cerrar al hacer click fuera
+    document.addEventListener("click", (e) => {
+      if (!navWrapper.contains(e.target) && !hamburger.contains(e.target)) {
+        navWrapper.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  }
+
+
+
+/* ===========================
+     VIDEOS YOUTUBE
+  =========================== */
+  
 function loadVideo(element) {
   // Evita recargar si ya fue cargado
   if (element.classList.contains('loaded')) return;
@@ -16,6 +51,11 @@ function loadVideo(element) {
       loading="lazy">
     </iframe>
   `;
+      // 🔥 opcional: cerrar menú si estaba abierto (mejor UX mobile)
+    if (navWrapper && navWrapper.classList.contains("active")) {
+      navWrapper.classList.remove("active");
+      document.body.style.overflow = "";
+    }
 }
 
 // Inicialización
@@ -27,9 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Click del mouse
     video.addEventListener("click", () => loadVideo(video));
 
-    // Enter desde teclado
-    video.addEventListener("keydown", e => {
-      if (e.key === "Enter") loadVideo(video);
+    // teclado (Enter + Space)
+    video.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        loadVideo(video);
+      }
     });
   });
 });
