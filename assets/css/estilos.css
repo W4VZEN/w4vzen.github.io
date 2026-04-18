@@ -19,7 +19,10 @@ body {
 }
 
 
-/* Contenedor principal del contenido */
+/* ===========================
+   CONTENIDO
+=========================== */
+
 .content {
   width: 100%;       /* ocupa todo el ancho */
   max-width: 100%;   /* elimina cualquier límite */
@@ -88,6 +91,11 @@ body {
   text-align: right;
 }
 
+
+/* ===========================
+   VIDEO SECTION
+=========================== */
+
 .video-section {
   background-color: #fff;
   width: 100vw;                     /* ancho total de pantalla */
@@ -141,6 +149,8 @@ body {
   display: block;
   object-fit: cover;  
 }
+
+/* PLAY BUTTON */
 
 .play-button {
   position: absolute;
@@ -226,7 +236,7 @@ p {
   margin-right: 2em;
 }
 
-/* MENÚ CENTRADO REAL */
+/* MENÚ  */
 
 .menu {
   position: static; 
@@ -252,7 +262,7 @@ p {
   color: #fff;
 }
 
-/* ICONOS DERECHA */
+/* SOCIAL */
 
 .social-nav {
 
@@ -348,18 +358,34 @@ footer {
   cursor: pointer;
   margin-left: 1em;
 }
-
+/* ===========================
+   NAV WRAPPER (MOBILE MENU)
+=========================== */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
 
 /* ===========================
    RESPONSIVE
    =========================== */
 @media (max-width: 768px) {
 
+/* ===========================
+     SOCIAL LINKS
+  =========================== */
+   
   #social-links {
     font-size: 1.2em;
     gap: 0.8em;
   }
 
+   
+  /* ===========================
+     HERO VIDEO (IMPORTANTE)
+  =========================== */
+   
   .hero-video {
     height: 100vh;
     height: 100dvh;
@@ -377,8 +403,57 @@ footer {
 
     object-fit: cover;
   }
+   
+ /* ===========================
+     NAVBAR MOBILE (HAMBURGER)
+  =========================== */
 
-  /* layout de lanzamientos en vertical */
+  .hamburger {
+    display: block;
+  }
+
+  .nav-wrapper {
+    position: fixed;
+    top: 5em;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 5em);
+
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2em;
+    z-index: 999;
+  }
+
+  .nav-wrapper.active {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .menu a {
+    font-size: 1.3em;
+  }
+
+  .social-nav {
+    margin-left: 0;
+    justify-content: center;
+    gap: 1.2em;
+  }
+   
+/* ===========================
+     LANZAMIENTOS (VERTICAL)
+  =========================== */
+   
   .release {
     flex-direction: column;
     gap: 1em;
@@ -402,12 +477,25 @@ footer {
 
 }
 
+/* ===========================
+   480px (MÓVIL PEQUEÑO)
+=========================== */
+
 @media (max-width: 480px) {
+
+/* ===========================
+     SOCIAL LINKS
+  =========================== */
+   
   #social-links {
     font-size: 1em;
     gap: 0.6em;
   }
+
    
+/* ===========================
+     HERO VIDEO
+  =========================== */
   .hero-video {
       height: 100vh;
       height: 100dvh;
@@ -417,20 +505,46 @@ footer {
     height: 100%;
     object-fit: cover;
   }
+
    
-   .topbar {
-  padding: 0 1em;
-  background: transparent;
-  backdrop-filter: none;
-}
+  /* ===========================
+     TOPBAR
+  =========================== */
+  .topbar {
+    padding: 0 1em;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+  }
 
-.menu {
-  gap: 1em;
-  font-size: 0.75em;
-}
+  .logo {
+    font-size: 1.4em;
+  }
 
-.social-nav {
-  gap: 0.6em;
-}
+  /* ===========================
+     MENU AJUSTES
+  =========================== */
+  .menu {
+    gap: 1em;
+    font-size: 0.85em;
+  }
+
+  .menu a {
+    font-size: 1.1em;
+  }
+
+  .social-nav {
+    gap: 0.6em;
+  }
+
+  /* ===========================
+     TEXTO VIDEO
+  =========================== */
+  .release .video-title {
+    font-size: 1em;
+  }
+
+  .video-container {
+    max-width: 100%;
+  }
 }
 
