@@ -418,7 +418,7 @@ footer {
     top: 5em;
     left: 0;
     width: 100%;
-    height: calc(100vh - 5em);
+   height: min(65vh, 500px);
 
     background: rgba(0,0,0,0.95);
     backdrop-filter: blur(10px);
