@@ -415,7 +415,7 @@ footer {
 
 .nav-wrapper {
   position: fixed;
-  top: 5em;
+  top: 0;
   left: 0;
   width: 100%;
   height: min(65vh, 500px);
@@ -427,7 +427,7 @@ footer {
   flex-direction: column;
 
   justify-content: flex-start;
-  padding-top: 2em;
+  padding-top: 5em;
   overflow-y: auto;
 
   align-items: center;
