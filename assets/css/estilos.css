@@ -420,9 +420,8 @@ footer {
   width: 100%;
   height: min(40vh, 500px);
 
-background: rgba(0, 0, 0, 0.5);
+background: rgba(0, 0, 0, 0.6);
 backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px);
 
   display: flex;
   flex-direction: column;
