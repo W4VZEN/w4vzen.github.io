@@ -442,6 +442,7 @@ footer {
   pointer-events: none;
 
   transition: transform 0.4s ease, opacity 0.3s ease;
+  will-change: transform;
 }
 
  .nav-wrapper.active {
