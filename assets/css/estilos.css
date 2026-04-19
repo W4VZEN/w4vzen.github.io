@@ -418,18 +418,17 @@ footer {
     top: 5em;
     left: 0;
     width: 100%;
-   height: min(65vh, 500px);
-
+    height: min(65vh, 500px);
     background: rgba(0,0,0,0.95);
     backdrop-filter: blur(10px);
-
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     gap: 2em;
     z-index: 1001;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 
   .nav-wrapper.active {
