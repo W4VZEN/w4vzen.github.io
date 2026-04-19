@@ -427,7 +427,7 @@ footer {
   flex-direction: column;
 
   justify-content: flex-start;
-  padding-top: 3em;
+  padding: 3em 0 1em; /* top | sides | bottom */
   overflow-y: auto;
 
   align-items: center;
@@ -533,6 +533,8 @@ footer {
   .menu {
     gap: 1em;
     font-size: 0.85em;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .menu a {
