@@ -216,7 +216,7 @@ p {
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(0.4em);
 
-  z-index: 2000;
+  z-index: 1000;
 }
 
 .topbar-inner {
@@ -433,7 +433,7 @@ footer {
   align-items: center;
   gap: 2em;
 
-  z-index: 1000;
+  z-index: 1001;
    
 
    
