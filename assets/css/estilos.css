@@ -418,9 +418,9 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  height: min(65vh, 500px);
+  height: min(40vh, 500px);
 
-background: rgba(0, 0, 0, 0.35);
+background: rgba(0, 0, 0, 0.5);
 backdrop-filter: blur(12px);
 -webkit-backdrop-filter: blur(12px);
 
