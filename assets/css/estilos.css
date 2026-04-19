@@ -418,10 +418,10 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  height: min(40vh, 500px);
+  height: min(35vh, 500px);
 
-background: rgba(0, 0, 0, 0.6);
-backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
 
   display: flex;
   flex-direction: column;
@@ -441,7 +441,7 @@ backdrop-filter: blur(12px);
   opacity: 0;
   pointer-events: none;
 
-  transition: transform 0.4s ease, opacity 0.3s ease;
+  transition: transform 0.2s ease, opacity 0.15s ease;
   will-change: transform;
 }
 
