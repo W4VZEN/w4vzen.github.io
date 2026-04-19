@@ -434,9 +434,14 @@ footer {
   gap: 2em;
 
   z-index: 1001;
+   
+/*Desplazamiento vertical*/
+   
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
 
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
   .nav-wrapper.active {
