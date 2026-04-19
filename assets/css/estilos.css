@@ -418,7 +418,7 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  height: min(65vh, 500px);
+  min-height: 100vh;
 
   background: rgba(0,0,0,0.95);
   backdrop-filter: blur(10px);
@@ -435,7 +435,7 @@ footer {
 
   z-index: 1000;
    
-/*Desplazamiento vertical*/
+
    
   transform: translateY(-100%);
   opacity: 0;
@@ -466,9 +466,7 @@ footer {
     gap: 1.2em;
   }
    
-/* ===========================
-     LANZAMIENTOS (VERTICAL)
-  =========================== */
+
    
   .release {
     flex-direction: column;
@@ -499,9 +497,7 @@ footer {
 
 @media (max-width: 480px) {
 
-/* ===========================
-     SOCIAL LINKS
-  =========================== */
+
    
   #social-links {
     font-size: 1em;
@@ -509,9 +505,7 @@ footer {
   }
 
    
-/* ===========================
-     HERO VIDEO
-  =========================== */
+
   .hero-video {
       height: 100vh;
       height: 100dvh;
@@ -522,10 +516,7 @@ footer {
     object-fit: cover;
   }
 
-   
-  /* ===========================
-     TOPBAR
-  =========================== */
+
   .topbar {
     padding: 0 1em;
     background: rgba(0,0,0,0.6);
@@ -536,9 +527,7 @@ footer {
     font-size: 1.4em;
   }
 
-  /* ===========================
-     MENU AJUSTES
-  =========================== */
+
   .menu {
     gap: 1em;
     font-size: 0.85em;
@@ -552,9 +541,7 @@ footer {
     gap: 0.6em;
   }
 
-  /* ===========================
-     TEXTO VIDEO
-  =========================== */
+
   .release .video-title {
     font-size: 1em;
   }
