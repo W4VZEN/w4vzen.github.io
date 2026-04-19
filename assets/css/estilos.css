@@ -423,7 +423,7 @@ footer {
   background: rgba(0,0,0,0.95);
   backdrop-filter: blur(10px);
 
-  display: none; /* 👈 importante */
+  display: flex;
   flex-direction: column;
 
   justify-content: flex-start;
@@ -444,9 +444,11 @@ footer {
   transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
-  .nav-wrapper.active {
-    display: flex;
-  }
+ .nav-wrapper.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
 
   .menu {
     flex-direction: column;
