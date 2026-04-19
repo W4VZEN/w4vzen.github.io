@@ -454,6 +454,8 @@ footer {
   .menu {
     flex-direction: column;
     gap: 1.5em;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .menu a {
