@@ -412,10 +412,12 @@ footer {
   .hamburger {
     display: block;
   }
-
+  .topbar {
+    height: 4em;
+  }
 .nav-wrapper {
   position: fixed;
-  top: 6em;
+  top: 4em;
   left: 0;
   width: 100%;
    
