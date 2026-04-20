@@ -415,29 +415,26 @@ footer {
 
 .nav-wrapper {
   position: fixed;
-  top: 0;
+  top: 5em;
   left: 0;
   width: 100%;
-  height: min(37vh, 500px);
-
+   
+  height: auto;
+  max-height: 80vh; 
+   
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(12px);
 
   display: flex;
   flex-direction: column;
-
-  justify-content: flex-start;
+  align-items: center;
+  gap: 2em;
   padding: 3em 0 1em; /* top | sides | bottom */
   overflow-y: auto;
 
-  align-items: center;
-  gap: 2em;
-
   z-index: 1001;
    
-
-   
-  transform: translateY(-100%);
+  transform: translateY(-20%);
   opacity: 0;
   pointer-events: none;
 
