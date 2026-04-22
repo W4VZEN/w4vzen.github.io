@@ -250,7 +250,7 @@ p {
 .menu a {
   text-decoration: none;
   color: rgba(255,255,255,0.85);
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-family: 'Staatliches', sans-serif;
   font-weight: 700;
   letter-spacing: 0.35em;
@@ -538,7 +538,7 @@ footer {
   }
 
   .menu a {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 
   .social-nav {
