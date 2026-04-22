@@ -244,16 +244,16 @@ p {
 
   display: flex;
   justify-content: center;
-  gap: 3em;
+  gap: 2em;
 }
 
 .menu a {
   text-decoration: none;
   color: rgba(255,255,255,0.85);
-  font-size: 1.5em;
+  font-size: 1.9em;
   font-family: 'Staatliches', sans-serif;
   font-weight: 700;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   transition: 0.2s ease;
 }
