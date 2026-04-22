@@ -259,7 +259,8 @@ p {
 }
 
 .menu a:hover {
-  color: #fff;
+   color: #fff;
+   transform: translateY(-2px) scale(1.05);
 }
 
 /* SOCIAL */
