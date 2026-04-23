@@ -13,14 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation();
       navWrapper.classList.toggle("active");
 
-      document.body.style.overflow =
-        navWrapper.classList.contains("active") ? "hidden" : "";
     });
 
     document.addEventListener("click", (e) => {
       if (!navWrapper.contains(e.target) && !hamburger.contains(e.target)) {
         navWrapper.classList.remove("active");
-        document.body.style.overflow = "";
+    
       }
     });
   }
