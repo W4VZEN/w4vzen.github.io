@@ -303,7 +303,7 @@ footer {
   gap: 2em;
 }
 /* ===========================
-   ICONOS (BASE ÚNICA)
+   ICONOS 
 =========================== */
 
 .social-icons {
@@ -320,6 +320,7 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .social-icons a:hover {
