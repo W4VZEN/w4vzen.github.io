@@ -305,11 +305,18 @@ footer {
 .footer-social {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1em;
+  margin-top: 0.8em;
 }
 
 .footer-social a {
   font-size: 1.4em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.8);
+   
 }
 /* ===========================
    HAMBURGER BUTTON
