@@ -234,7 +234,13 @@ p {
   font-size: 1.9em;
   letter-spacing: 0.14em;
   margin-right: 2em;
-  color: white;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.logo:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
 }
 
 /* MENÚ  */
