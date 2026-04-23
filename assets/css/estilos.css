@@ -279,8 +279,7 @@ p {
   transition: 0.3s;
 }
 
-.social-nav a:hover,
-.footer-social a:hover {
+.social-nav a:hover {
   color: #fff;
   transform: scale(1.15);
 }
