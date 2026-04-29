@@ -267,8 +267,6 @@ body {
   filter: brightness(0.7);
 }
 
-
-
 /* ===========================
    PÁRRAFOS
    =========================== */
@@ -286,6 +284,9 @@ p {
 /* ===========================
    FANS / NEWSLETTER FIX
 =========================== */
+#fans {
+  scroll-margin-top: 6em;
+}
 
 .fans-section {
   padding: 6em 0;
