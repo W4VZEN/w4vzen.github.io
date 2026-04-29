@@ -7,10 +7,6 @@
   box-sizing: border-box;
 }
 
-/*html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 6em;
-}*/
 
 /* ===========================
    BODY GENERAL
@@ -284,12 +280,10 @@ p {
 /* ===========================
    FANS / NEWSLETTER FIX
 =========================== */
-#fans {
-  scroll-margin-top: 6em;
-}
 
 .fans-section {
-  padding: 6em 0;
+  /*padding: 6em 0;*/ 
+   padding: 8em 0 10em 0;
 }
 
 .fans-section .container {
