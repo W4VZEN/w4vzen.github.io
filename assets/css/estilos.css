@@ -203,6 +203,10 @@ body {
   background: #050505;
 }
 
+.shop-section .section-title {
+  margin-bottom: 2em;
+}
+
 .shop-grid {
   display: flex;
   gap: 2em;
