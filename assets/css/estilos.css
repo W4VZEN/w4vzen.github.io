@@ -106,12 +106,10 @@ body {
 =========================== */
 
 .video-section {
-  background-color: #fff;
+  background-color: #050505;
   width: 100vw;                     /* ancho total de pantalla */
   margin-left: calc(50% - 50vw);    /* rompe el contenedor */
-  padding: 6em 1em 3em; /* antes era 3em 1em */
-
-
+  padding: 6em 1em 3em; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,7 +131,7 @@ body {
   margin-top: 2em;
   margin-bottom: 0.5em;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
 }
 
 .video-container {
