@@ -97,7 +97,7 @@ body {
 
     display:flex;
     align-items:center;
-    gap:4.5em;
+    gap:6em;
 }
 
 .music-image{
@@ -116,7 +116,7 @@ body {
 .music-content{
     flex:1;
     text-align:left;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .music-content h3{
