@@ -134,21 +134,22 @@ body {
     padding:18px 42px;
     background:#fff;
     color:#000;
+
+    border:1px solid transparent;
+
     text-decoration:none;
     font-family:'Staatliches', sans-serif;
     letter-spacing:.15em;
     font-size:1.1em;
 
-    border:1px solid transparent;
     transition:all .25s ease;
 }
 
 .listen-btn:hover{
     background:#0a0a0a;
     color:#fff;
-    border-color:rgba(255,255,255,.4);
+    border:1px solid rgba(255,255,255,.4);
     transform:translateY(-6px);
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 /* ===========================
    SHOPS (BANDCAMP STORE)
