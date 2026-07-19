@@ -423,9 +423,9 @@ footer {
 @media (max-width: 768px) {
 
 
-  /* ===========================
-     HERO VIDEO (IMPORTANTE)
-  =========================== */
+ /* ===========================
+   HERO VIDEO
+=========================== */
    
   .hero-video {
     height: 100vh;
@@ -444,10 +444,11 @@ footer {
 
     object-fit: cover;
   }
+
    
- /* ===========================
-     NAVBAR MOBILE (HAMBURGER)
-  =========================== */
+/* ===========================
+   NAVBAR
+=========================== */
 
   .hamburger {
     display: block;
@@ -501,12 +502,22 @@ footer {
     font-size: 1.4em;
   }
 
+   
+/* ===========================
+   ICONOS 
+=========================== */
+   
    .social-icons {
     gap: 1.2em;
   }
+   
+ .social-icons a {
+     font-size: 1.5em;
+  }
 
+   
 /* ===========================
-   MUSIC BANNER (TABLET / MOBILE)
+   MUSIC
 =========================== */
 
 .music-banner{
@@ -538,35 +549,22 @@ footer {
   font-size: 2.2em;
 }
 
-.music-content p{
-  text-align: center;
-  max-width: 500px;
-  margin: 1em auto 2em;
-}
 
 .listen-btn{
   display: inline-block;
 }
 }
 
-/* ===========================
-   480px (MÓVIL PEQUEÑO)
-=========================== */
+
+
 
 @media (max-width: 480px) {
+   
+/* ===========================
+   NAVBAR
+=========================== */
 
    
-  .hero-video {
-      height: 100vh;
-      height: 100dvh;
-  }
-  .hero-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-
   .topbar {
     padding: 0 1em;
     background: rgba(0,0,0,0.6);
@@ -589,13 +587,9 @@ footer {
     font-size: 1.2em;
   }
 
-  /* ICONOS */
-  .social-icons a {
-     font-size: 1.5em;
-  }
    
 /* ===========================
-   MUSIC BANNER (MOBILE)
+   MUSIC
 =========================== */
 
 .music-section{
@@ -610,15 +604,19 @@ footer {
   font-size: 1.8em;
 }
 
-.music-content p{
-  font-size: .95em;
-}
 
 .listen-btn{
   padding: 16px 32px;
   font-size: 1em;
 }
-  /* FOOTER */
+
+
+   
+/* =========================== 
+   FOOTER
+=========================== */
+
+   
   footer {
     font-size: 0.8em;
   }
