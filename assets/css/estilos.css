@@ -116,7 +116,7 @@ body {
 .music-content{
     flex:1;
     text-align:center;
-    margin-left: 0;
+    transform:translateX(60px);
 }
 
 .music-content h3{
