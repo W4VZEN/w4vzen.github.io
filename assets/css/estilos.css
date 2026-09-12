@@ -147,7 +147,7 @@ body {
 
 /* ===========================
    PÁRRAFOS BIO
-=========================== */
+   =========================== */
 
 .bio-text p {
   max-width: 750px;
@@ -155,38 +155,38 @@ body {
   margin: 0 0 1.4em !important;
   padding: 0;
 
-  font-family: 'Staatliches', sans-serif;
-  font-size: 0.9em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85em;
   font-weight: 400;
 
-  line-height: 1.65;
-  letter-spacing: 0.08em;
-
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+  letter-spacing: normal;
 
   text-align: left;
 }
 
 
 /* ===========================
-   FIRMA
-=========================== */
+   FIRMA BIO
+   =========================== */
 
 .bio-signature {
   display: inline-block;
 
   margin-top: 0.5em;
 
-  font-family: 'Staatliches', sans-serif;
-  font-size: 1.1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85em;
+  font-weight: 400;
 
-  line-height: 1.2;
-  letter-spacing: 0.2em;
-
-  color: #eb1c5d;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+  letter-spacing: normal;
 
   text-align: left;
 }
+
 
 
 
@@ -525,20 +525,15 @@ footer {
 
 
 
-
-
-
-
 /* ===========================
    RESPONSIVE
    =========================== */
-
 @media (max-width: 768px) {
 
 
- /* ===========================
-   HERO VIDEO
-=========================== */
+  /* ===========================
+     HERO VIDEO (IMPORTANTE)
+  =========================== */
    
   .hero-video {
     height: 100vh;
@@ -557,11 +552,10 @@ footer {
 
     object-fit: cover;
   }
-
    
-/* ===========================
-   NAVBAR
-=========================== */
+ /* ===========================
+     NAVBAR MOBILE (HAMBURGER)
+  =========================== */
 
   .hamburger {
     display: block;
@@ -615,73 +609,52 @@ footer {
     font-size: 1.4em;
   }
 
-   
-/* ===========================
-   ICONOS 
-=========================== */
-   
    .social-icons {
     gap: 1.2em;
   }
+
    
- .social-icons a {
-     font-size: 1.5em;
+  .release {
+    flex-direction: column;
+    gap: 1em;
+    margin: 2em auto;
+  }
+
+  .release:nth-of-type(even) {
+    flex-direction: column;
+  }
+
+.release .video-title {
+  font-size: 1.2em;
+  margin-top: 0.3em;   /* un poco más pegado al video */
+  margin-bottom: 1em;  /* espacio debajo del título antes del siguiente video */
+  text-align: center;
+}
+ .video-container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+}
+
+/* ===========================
+   480px (MÓVIL PEQUEÑO)
+=========================== */
+
+@media (max-width: 480px) {
+
+   
+  .hero-video {
+      height: 100vh;
+      height: 100dvh;
+  }
+  .hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
 
-
-
-
-   
-/* ===========================
-   MUSIC
-=========================== */
-
-.music-banner{
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5em;
-}
-
-.music-image{
-  flex: none;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.music-image img{
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-}
-
-.music-content{
-  width: 100%;
-  text-align: center;
-}
-
-.music-content h3{
-  font-size: 2.2em;
-}
-
-
-.listen-btn{
-  display: inline-block;
-}
-}
-
-
-
-
-@media (max-width: 480px) {
-   
-/* ===========================
-   NAVBAR
-=========================== */
-
-   
   .topbar {
     padding: 0 1em;
     background: rgba(0,0,0,0.6);
@@ -704,40 +677,22 @@ footer {
     font-size: 1.2em;
   }
 
-   
-   
-/* ===========================
-   MUSIC
-=========================== */
+  /* ICONOS */
+  .social-icons a {
+    font-size: 1.1em;
+  }
 
-.music-section{
-  padding: 4em 1em;
-}
-
-.music-image img{
-  max-width: 240px;
-}
-
-.music-content h3{
-  font-size: 1.8em;
-}
-
-
-.listen-btn{
-  padding: 16px 32px;
-  font-size: 1em;
-}
-
-
-   
-/* =========================== 
-   FOOTER
-=========================== */
-
-   
+  /* FOOTER */
   footer {
     font-size: 0.8em;
   }
 
+  .release .video-title {
+    font-size: 1em;
+  }
+
+  .video-container {
+    max-width: 100%;
+  }
 }
 
