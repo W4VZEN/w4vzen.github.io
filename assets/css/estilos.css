@@ -82,94 +82,122 @@ body {
 
 
 
+
 /* ===========================
-BIO
+   BIO — URBAN STYLE
 =========================== */
 
 .bio-section {
-width: 100vw;
-margin-left: calc(50% - 50vw);
-padding: 7em 1em;
-background: #000;
-overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 8em 1em;
+  background: #000;
+  overflow: hidden;
 }
 
 .bio-section .container {
-width: 90%;
-max-width: 1100px;
-margin: 0 auto;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .bio-section .section-title {
-margin-bottom: 3em;
+  margin-bottom: 3.5em;
 }
 
-/* CONTENIDO BIO */
+
+/* CONTENIDO */
 
 .bio-content {
-width: 100%;
-max-width: 900px;
-margin: 0 auto;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
 
-display: flex;
-align-items: stretch;
-gap: 2em;
+  display: flex;
+  align-items: stretch;
+  gap: 2.5em;
 
-text-align: left;
+  text-align: left;
 }
+
 
 /* LÍNEA ROSA */
 
 .bio-line {
-width: 3px;
-min-width: 3px;
-background: #eb1c5d;
+  width: 3px;
+  min-width: 3px;
+  background: #eb1c5d;
+  position: relative;
 }
+
+
+/* pequeño detalle urbano */
+
+.bio-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 45px;
+  background: #fff;
+}
+
 
 /* TEXTO */
 
 .bio-text {
-flex: 1;
-min-width: 0;
-padding: 0;
-text-align: left;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
 }
 
 
-/* PÁRRAFOS DE LA BIO */
+/* PÁRRAFOS */
 
 .bio-text p {
-max-width: 750px;
+  max-width: 800px;
 
-margin: 0 0 1.4em !important;
-padding: 0;
+  margin: 0 0 1.6em !important;
+  padding: 0;
 
-font-family: Arial, Helvetica, sans-serif;
-font-size: 0.95em;
-font-weight: 400;
-line-height: 1.8;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-weight: 400;
 
-letter-spacing: 0.02em;
-color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+  letter-spacing: 0.025em;
 
-text-align: left;
+  color: rgba(255,255,255,0.72);
+
+  text-align: left;
 }
+
+
+/* PRIMER PÁRRAFO MÁS DESTACADO */
+
+.bio-text p:first-child {
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+
 
 /* FIRMA */
 
 .bio-signature {
-display: inline-block;
+  display: inline-block;
 
-margin-top: 0.5em;
+  margin-top: 0.7em;
 
-font-family: 'Staatliches', sans-serif;
-font-size: 0.9em;
-line-height: 1;
+  font-family: 'Staatliches', sans-serif;
+  font-size: clamp(0.8rem, 1.3vw, 1rem);
 
-letter-spacing: 0.2em;
-color: #eb1c5d;
+  line-height: 1.2;
+  letter-spacing: 0.18em;
 
-text-align: left;
+  color: #eb1c5d;
+
+  text-align: left;
 }
 
 
