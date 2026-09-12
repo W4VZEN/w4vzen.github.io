@@ -82,15 +82,14 @@ body {
 
 
 
-
 /* ===========================
-   BIO — URBAN STYLE
+   BIO
 =========================== */
 
 .bio-section {
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding: 8em 1em;
+  padding: 7em 1em;
   background: #000;
   overflow: hidden;
 }
@@ -102,71 +101,66 @@ body {
 }
 
 .bio-section .section-title {
-  margin-bottom: 3.5em;
+  margin-bottom: 3em;
 }
 
 
-/* CONTENIDO */
+/* ===========================
+   CONTENIDO BIO
+=========================== */
 
 .bio-content {
   width: 100%;
-  max-width: 950px;
+  max-width: 900px;
   margin: 0 auto;
 
   display: flex;
   align-items: stretch;
-  gap: 2.5em;
+  gap: 2em;
 
   text-align: left;
 }
 
 
-/* LÍNEA ROSA */
+/* ===========================
+   LÍNEA ROSA
+=========================== */
 
 .bio-line {
   width: 3px;
   min-width: 3px;
   background: #eb1c5d;
-  position: relative;
 }
 
 
-/* pequeño detalle urbano */
-
-.bio-line::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 45px;
-  background: #fff;
-}
-
-
-/* TEXTO */
+/* ===========================
+   TEXTO
+=========================== */
 
 .bio-text {
   flex: 1;
   min-width: 0;
+  padding: 0;
   text-align: left;
 }
 
 
-/* PÁRRAFOS */
+/* ===========================
+   PÁRRAFOS BIO
+=========================== */
 
 .bio-text p {
-  max-width: 800px;
+  max-width: 750px;
 
-  margin: 0 0 1.6em !important;
+  margin: 0 0 1.4em !important;
   padding: 0;
 
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-family: 'Staatliches', sans-serif;
+  font-size: 1.15em;
   font-weight: 400;
 
   line-height: 1.65;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.08em;
 
   color: rgba(255,255,255,0.72);
 
@@ -174,32 +168,25 @@ body {
 }
 
 
-/* PRIMER PÁRRAFO MÁS DESTACADO */
-
-.bio-text p:first-child {
-  color: rgba(255,255,255,0.9);
-  font-weight: 500;
-}
-
-
-/* FIRMA */
+/* ===========================
+   FIRMA
+=========================== */
 
 .bio-signature {
   display: inline-block;
 
-  margin-top: 0.7em;
+  margin-top: 0.5em;
 
   font-family: 'Staatliches', sans-serif;
-  font-size: clamp(0.8rem, 1.3vw, 1rem);
+  font-size: 0.9em;
 
   line-height: 1.2;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
 
   color: #eb1c5d;
 
   text-align: left;
 }
-
 
 
 
