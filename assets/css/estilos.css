@@ -135,21 +135,6 @@ padding: 0;
 text-align: left;
 }
 
-/* NOMBRE */
-
-.bio-text h3 {
-margin: 0 0 0.6em;
-
-font-family: 'Anton', Arial, sans-serif;
-font-size: clamp(2rem, 5vw, 3.5rem);
-font-weight: 400;
-line-height: 1;
-
-letter-spacing: 0.08em;
-color: #fff;
-
-text-align: left;
-}
 
 /* PÁRRAFOS DE LA BIO */
 
