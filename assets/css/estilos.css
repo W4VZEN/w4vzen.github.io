@@ -450,78 +450,82 @@ footer {
 
 
 
+
 /* ===========================
-   RESPONSIVE
-   =========================== */
+   RESPONSIVE - TABLET Y MOBILE
+=========================== */
+
 @media (max-width: 768px) {
 
-
   /* ===========================
-     HERO VIDEO (IMPORTANTE)
+     HERO VIDEO
   =========================== */
-   
+
   .hero-video {
     height: 100vh;
     height: 100dvh;
     overflow: hidden;
     position: relative;
   }
-   .hero-video video {
+
+  .hero-video video {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
   }
-   
- /* ===========================
-     NAVBAR MOBILE (HAMBURGER)
+
+
+  /* ===========================
+     NAVBAR MOBILE
   =========================== */
+
+  .topbar {
+    height: 4em;
+  }
 
   .hamburger {
     display: block;
   }
-  .topbar {
-    height: 4em;
+
+  .nav-wrapper {
+    position: fixed;
+    top: 4em;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    max-height: 80dvh;
+
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    padding: 3em 0 1em;
+    overflow-y: auto;
+
+    z-index: 1001;
+
+    transform: translateY(-20%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    will-change: transform, opacity;
   }
-.nav-wrapper {
-  position: fixed;
-  top: 4em;
-  left: 0;
-  width: 100%;
-   
-  height: auto;
-  max-height: 80vh; 
-   
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(12px);
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2em;
-  padding: 3em 0 1em; /* top | sides | bottom */
-  overflow-y: auto;
-
-  z-index: 1001;
-   
-  transform: translateY(-20%);
-  opacity: 0;
-  pointer-events: none;
-
-  transition: transform 0.25s ease, opacity 0.25s ease;
-  will-change: transform, opacity;
-}
-
- .nav-wrapper.active {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
+  .nav-wrapper.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 
   .menu {
     flex-direction: column;
@@ -534,11 +538,15 @@ footer {
     font-size: 1.4em;
   }
 
-   .social-icons {
+  .social-icons {
     gap: 1.2em;
   }
 
-   
+
+  /* ===========================
+     RELEASES / VIDEOS
+  =========================== */
+
   .release {
     flex-direction: column;
     gap: 1em;
@@ -549,18 +557,35 @@ footer {
     flex-direction: column;
   }
 
-.release .video-title {
-  font-size: 1.2em;
-  margin-top: 0.3em;   /* un poco más pegado al video */
-  margin-bottom: 1em;  /* espacio debajo del título antes del siguiente video */
-  text-align: center;
-}
- .video-container {
-  max-width: 95%;
-  margin: 0 auto;
-}
+  .release .video-title {
+    font-size: 1.2em;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
 
-.music-section {
+
+  /* ===========================
+     VIDEO YOUTUBE
+  =========================== */
+
+  .video-section {
+    padding: 4em 1em;
+  }
+
+  .video-container {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+  }
+
+
+  /* ===========================
+     MUSIC SECTION
+  =========================== */
+
+  .music-section {
     width: 100%;
     margin-left: 0;
     padding: 4em 1.25em;
@@ -596,7 +621,6 @@ footer {
   .music-content {
     width: 100%;
     flex: none;
-
     padding-left: 0;
     text-align: center;
 
@@ -615,22 +639,26 @@ footer {
     display: inline-block;
     margin: 0 auto;
   }
+
 }
 
-   
-}
 
 /* ===========================
-   480px (MÓVIL PEQUEÑO)
+   MOBILE PEQUEÑO
+   480px
 =========================== */
 
 @media (max-width: 480px) {
 
-   
+  /* ===========================
+     HERO VIDEO
+  =========================== */
+
   .hero-video {
-      height: 100vh;
-      height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
   }
+
   .hero-video video {
     width: 100%;
     height: 100%;
@@ -638,16 +666,19 @@ footer {
   }
 
 
+  /* ===========================
+     NAVBAR
+  =========================== */
+
   .topbar {
     padding: 0 1em;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
   }
 
   .logo {
     font-size: 1.4em;
   }
-
 
   .menu {
     gap: 1em;
@@ -660,26 +691,52 @@ footer {
     font-size: 1.2em;
   }
 
-  /* ICONOS */
+
+  /* ===========================
+     ICONOS
+  =========================== */
+
   .social-icons a {
     font-size: 1.1em;
   }
 
-  /* FOOTER */
+
+  /* ===========================
+     FOOTER
+  =========================== */
+
   footer {
     font-size: 0.8em;
   }
+
+
+  /* ===========================
+     RELEASES / VIDEOS
+  =========================== */
 
   .release .video-title {
     font-size: 1em;
   }
 
+
+  /* ===========================
+     VIDEO YOUTUBE
+  =========================== */
+
+  .video-section {
+    padding: 3.5em 1em;
+  }
+
   .video-container {
+    width: 100%;
     max-width: 100%;
+    aspect-ratio: 16 / 9;
   }
 
 
-@media (max-width: 480px) {
+  /* ===========================
+     MUSIC SECTION
+  =========================== */
 
   .music-section {
     padding: 3.5em 1em;
@@ -715,7 +772,9 @@ footer {
     padding: 15px 30px;
     font-size: 1em;
   }
+
 }
+
 
    
 }
