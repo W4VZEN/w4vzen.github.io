@@ -80,7 +80,77 @@ body {
     color:#fff;
 }
 
+/* ===========================
+   BIO SECTION
+=========================== */
 
+.bio-section {
+    width: 100%;
+    background: #000;
+    padding: 6em 0;
+}
+
+/* CONTENEDOR */
+
+.bio-section .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* TÍTULO */
+
+.bio-section .section-title {
+    margin-bottom: 2em;
+}
+
+/* CONTENIDO BIO */
+
+.bio-content {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 2em;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* LÍNEA VERTICAL */
+
+.bio-line {
+    width: 3px;
+    height: 100%;
+    background: rgba(255,255,255,0.7);
+}
+
+/* TEXTO */
+
+.bio-text {
+    text-align: left;
+}
+
+.bio-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.75);
+    text-align: left;
+    margin: 0 0 1.5em;
+}
+
+/* FIRMA */
+
+.bio-signature {
+    display: inline-block;
+    margin-top: 0.5em;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.15em;
+    color: #fff;
+    line-height: 1.8;
+}
 
 /* ===========================
    VIDEO SECTION - YOUTUBE
@@ -570,6 +640,27 @@ footer {
     text-align: center;
   }
 
+/* ==========================
+               BIO
+   ========================*/
+
+
+
+    .bio-section {
+        padding: 4em 0;
+    }
+
+    .bio-content {
+        gap: 1.2em;
+    }
+
+    .bio-text p {
+        font-size: 0.95em;
+        line-height: 1.8;
+    }
+
+   
+   
 
   /* ===========================
      VIDEO YOUTUBE
@@ -723,6 +814,42 @@ footer {
     font-size: 1em;
   }
 
+/* ==========================
+               BIO
+   ========================*/
+
+.bio-section {
+        padding: 3.5em 0;
+    }
+
+    .bio-section .container {
+        width: 92%;
+    }
+
+    .bio-section .section-title {
+        margin-bottom: 1.5em;
+    }
+
+    .bio-content {
+        grid-template-columns: 2px 1fr;
+        gap: 1em;
+    }
+
+    .bio-line {
+        width: 2px;
+    }
+
+    .bio-text p {
+        font-size: 0.88em;
+        line-height: 1.8;
+        margin-bottom: 1.3em;
+    }
+
+    .bio-signature {
+        font-size: 0.85em;
+        letter-spacing: 0.08em;
+    }
+   
 
   /* ===========================
      VIDEO YOUTUBE
