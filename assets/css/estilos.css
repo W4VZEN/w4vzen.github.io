@@ -80,77 +80,71 @@ body {
     color:#fff;
 }
 
+
 /* ===========================
-   BIO SECTION
+   BIO SECTION - W4VZEN
 =========================== */
 
 .bio-section {
     width: 100%;
     background: #000;
-    padding: 6em 0;
+    padding: 7em 0;
 }
-
-/* CONTENEDOR */
 
 .bio-section .container {
     width: 90%;
-    max-width: 1000px;
+    max-width: 950px;
     margin: 0 auto;
 }
 
 /* TÍTULO */
 
 .bio-section .section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: 0.12em;
+    font-weight: 400;
     margin-bottom: 2em;
 }
 
-/* CONTENIDO BIO */
+/* CONTENIDO */
 
 .bio-content {
-    display: grid;
-    grid-template-columns: 3px 1fr;
-    gap: 2em;
     max-width: 850px;
     margin: 0 auto;
-    text-align: left;
 }
-
-/* LÍNEA VERTICAL */
-
-.bio-line {
-    width: 3px;
-    height: 100%;
-    background: rgba(255,255,255,0.7);
-}
-
-/* TEXTO */
 
 .bio-text {
+    width: 100%;
     text-align: left;
 }
+
+/* PÁRRAFOS */
 
 .bio-text p {
     font-family: 'Inter', sans-serif;
-    font-size: 1em;
+    font-size: clamp(0.95rem, 1.2vw, 1.08rem);
     font-weight: 300;
-    line-height: 1.9;
-    letter-spacing: 0.02em;
-    color: rgba(255,255,255,0.75);
+    line-height: 2;
+    letter-spacing: 0.015em;
+    color: rgba(255,255,255,0.78);
     text-align: left;
-    margin: 0 0 1.5em;
+    margin: 0 0 1.8em;
 }
 
 /* FIRMA */
 
 .bio-signature {
     display: inline-block;
-    margin-top: 0.5em;
+    margin-top: 1em;
     font-family: 'Staatliches', sans-serif;
-    font-size: 1em;
-    letter-spacing: 0.15em;
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
     color: #fff;
     line-height: 1.8;
 }
+
 
 /* ===========================
    VIDEO SECTION - YOUTUBE
@@ -531,6 +525,7 @@ footer {
    RESPONSIVE - TABLET Y MOBILE
 =========================== */
 
+
 @media (max-width: 768px) {
 
   /* ===========================
@@ -645,21 +640,18 @@ footer {
    ========================*/
 
 
-
-    .bio-section {
-        padding: 4em 0;
+   .bio-section {
+        padding: 5em 0;
     }
 
     .bio-content {
-        gap: 1.2em;
+        max-width: 650px;
     }
 
     .bio-text p {
-        font-size: 0.95em;
-        line-height: 1.8;
+        font-size: 0.95rem;
+        line-height: 1.9;
     }
-
-   
    
 
   /* ===========================
@@ -818,36 +810,27 @@ footer {
                BIO
    ========================*/
 
-.bio-section {
-        padding: 3.5em 0;
+    .bio-section {
+        padding: 4em 0;
     }
 
     .bio-section .container {
-        width: 92%;
+        width: 90%;
     }
 
     .bio-section .section-title {
         margin-bottom: 1.5em;
     }
 
-    .bio-content {
-        grid-template-columns: 2px 1fr;
-        gap: 1em;
-    }
-
-    .bio-line {
-        width: 2px;
-    }
-
     .bio-text p {
-        font-size: 0.88em;
-        line-height: 1.8;
-        margin-bottom: 1.3em;
+        font-size: 0.9rem;
+        line-height: 1.85;
+        margin-bottom: 1.5em;
     }
 
     .bio-signature {
-        font-size: 0.85em;
-        letter-spacing: 0.08em;
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
     }
    
 
@@ -907,7 +890,4 @@ footer {
 
 }
 
-
-   
-}
 
