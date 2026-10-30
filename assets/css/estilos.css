@@ -81,6 +81,7 @@ body {
 }
 
 
+
 /* ===========================
    VIDEO SECTION - YOUTUBE
 =========================== */
@@ -88,7 +89,13 @@ body {
 .video-section {
     width: 100%;
     background: #000;
-    padding: 6em 1em;
+    padding: 6em 0;
+}
+
+.video-section .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
 }
 
 .video-section .section-title {
@@ -97,18 +104,17 @@ body {
 
 .video-container {
     position: relative;
-    width: 100%;
-    max-width: 950px;
+    width: 94%;
+    max-width: 1250px;
     aspect-ratio: 16 / 9;
     margin: 0 auto;
     overflow: hidden;
-    background: #080808;
+    background: #000;
 }
 
 .video-container iframe {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     border: 0;
@@ -569,16 +575,15 @@ footer {
      VIDEO YOUTUBE
   =========================== */
 
-  .video-section {
-    padding: 4em 1em;
-  }
+.video-section {
+    padding: 4em 0;
+}
 
-  .video-container {
-    width: 100%;
-    max-width: 100%;
+.video-container {
+    width: 97%;
+    max-width: none;
     aspect-ratio: 16 / 9;
-    margin: 0 auto;
-  }
+}
 
 
   /* ===========================
@@ -723,15 +728,15 @@ footer {
      VIDEO YOUTUBE
   =========================== */
 
-  .video-section {
-    padding: 3.5em 1em;
-  }
+.video-section {
+    padding: 3.5em 0;
+}
 
-  .video-container {
+.video-container {
     width: 100%;
-    max-width: 100%;
+    max-width: none;
     aspect-ratio: 16 / 9;
-  }
+}
 
 
   /* ===========================
