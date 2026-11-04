@@ -132,18 +132,79 @@ body {
     margin: 0 0 1.8em;
 }
 
-/* FIRMA */
+/* ===========================
+   PERFIL PROFESIONAL
+=========================== */
 
-.bio-signature {
+.bio-professional {
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: left;
+}
+
+/* ETIQUETA */
+
+.professional-label {
     display: inline-block;
-    margin-top: 1em;
     font-family: 'Staatliches', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 400;
+    font-size: 1.15rem;
     letter-spacing: 0.16em;
     color: #fff;
-    line-height: 1.8;
+    margin-bottom: 1em;
 }
+
+/* TEXTO PROFESIONAL */
+
+.bio-professional p {
+    margin-bottom: 1.8em;
+}
+
+/* ===========================
+   LINKEDIN
+=========================== */
+
+.linkedin-profile-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+
+    padding: 14px 24px;
+
+    border: 1px solid rgba(255,255,255,0.35);
+    background: transparent;
+
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+
+    font-family: 'Staatliches', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+
+    transition: all 0.3s ease;
+}
+
+.linkedin-profile-link i:first-child {
+    font-size: 1.3em;
+}
+
+.linkedin-profile-link i:last-child {
+    font-size: 0.75em;
+    opacity: 0.6;
+}
+
+.linkedin-profile-link:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-3px);
+}
+
+.linkedin-profile-link:hover i:last-child {
+    opacity: 1;
+}
+
 
 
 /* ===========================
