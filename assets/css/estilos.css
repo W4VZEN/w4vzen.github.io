@@ -137,29 +137,31 @@ body {
 =========================== */
 
 .bio-professional {
-    margin-top: 3em;
-    padding-top: 2em;
-    border-top: 1px solid rgba(255,255,255,0.15);
+    margin-top: 3.5em;
+    padding-top: 2.5em;
+    border-top: 1px solid rgba(255,255,255,0.18);
     text-align: left;
 }
-
-/* ETIQUETA */
 
 .professional-label {
     display: inline-block;
     font-family: 'Staatliches', sans-serif;
-    font-size: 1.15rem;
-    letter-spacing: 0.16em;
+    font-size: 1.2rem;
+    letter-spacing: 0.18em;
     color: #fff;
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
 }
-
-/* TEXTO PROFESIONAL */
 
 .bio-professional p {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: 0.015em;
+    color: rgba(255,255,255,0.78);
+    text-align: left;
     margin-bottom: 1.8em;
 }
-
 /* ===========================
    LINKEDIN
 =========================== */
