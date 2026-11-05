@@ -544,14 +544,14 @@ footer {
 
 .social-icons {
   display: flex;
-  gap: 1em;
+  gap: 1.5em;
   align-items: center;
   justify-content: center;
 }
 
 .social-icons a {
   color: rgba(255,255,255,0.6);
-  font-size: 1.3em;
+  font-size: 2em;
   transition: 0.3s;
   align-items: center;
   justify-content: center;
@@ -559,7 +559,7 @@ footer {
 
 .social-icons a:hover {
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 
@@ -853,7 +853,7 @@ footer {
   =========================== */
 
   .social-icons a {
-    font-size: 1.1em;
+    font-size: 2.3em;
   }
 
 
