@@ -669,6 +669,8 @@ footer {
     text-align: center;
   }
 
+
+   
 /* ==========================
                BIO
    ========================*/
@@ -687,7 +689,19 @@ footer {
         line-height: 1.9;
     }
    
+   .linkedin-profile-link {
+       font-size: 0.9rem;
+       padding: 12px 18px;
+       gap: 0.6em;
+       letter-spacing: 0.08em;
+       max-width: 100%;
+       flex-wrap: wrap;
+       text-align: center;
+    }
 
+
+
+   
   /* ===========================
      VIDEO YOUTUBE
   =========================== */
@@ -867,7 +881,13 @@ footer {
         letter-spacing: 0.1em;
     }
    
-
+    .linkedin-profile-link {
+       font-size: 0.8rem;
+       padding: 11px 12px;
+       gap: 0.5em;
+       letter-spacing: 0.05em;
+       max-width: 100%;
+    }
   /* ===========================
      VIDEO YOUTUBE
   =========================== */
