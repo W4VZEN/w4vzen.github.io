@@ -519,6 +519,18 @@ footer {
 }
 
 /* ===========================
+   ICONOS REDES SOCIALES FOOTER
+=========================== */
+
+footer .social-icons {
+  gap: 1.5em;
+}
+
+footer .social-icons a {
+  font-size: 2em;
+}
+
+/* ===========================
    HAMBURGER BUTTON
 =========================== */
 
@@ -544,14 +556,14 @@ footer {
 
 .social-icons {
   display: flex;
-  gap: 1.5em;
+  gap: 1em;
   align-items: center;
   justify-content: center;
 }
 
 .social-icons a {
   color: rgba(255,255,255,0.6);
-  font-size: 2em;
+  font-size: 1.3em;
   transition: 0.3s;
   align-items: center;
   justify-content: center;
@@ -559,7 +571,7 @@ footer {
 
 .social-icons a:hover {
   color: #fff;
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 
@@ -660,6 +672,16 @@ footer {
   }
 
 
+/* ICONOS FOOTER - TABLET Y MOBILE */
+
+footer .social-icons a {
+  font-size: 2.1em;
+}
+
+footer .social-icons {
+  gap: 1.4em;
+}
+   
   /* ===========================
      RELEASES / VIDEOS
   =========================== */
@@ -852,9 +874,13 @@ footer {
      ICONOS
   =========================== */
 
-  .social-icons a {
-    font-size: 2.3em;
-  }
+footer .social-icons a {
+  font-size: 2.3em;
+}
+
+footer .social-icons {
+  gap: 1.3em;
+}
 
 
   /* ===========================
