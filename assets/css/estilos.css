@@ -783,10 +783,18 @@ footer {
     text-align: center;
   }
 
-  .listen-btn {
-    display: inline-block;
+.listen-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
-  }
+}
+
+.listen-btn i {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
 
 }
 
@@ -948,11 +956,20 @@ footer {
     margin-bottom: 0.8em;
   }
 
-  .listen-btn {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1em;
-  }
+.listen-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 70px;
+    padding: 0;
+}
+
+.listen-btn i {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
 
 }
 
