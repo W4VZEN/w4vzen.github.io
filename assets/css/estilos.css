@@ -21,6 +21,22 @@ body {
 
 
 /* ===========================
+   FONDO FIJO GENERAL
+=========================== */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image: url('/assets/img/fondo-escritorio.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* ===========================
    CONTENIDO
 =========================== */
 
