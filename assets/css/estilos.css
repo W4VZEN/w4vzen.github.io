@@ -460,7 +460,7 @@ p {
   justify-content: center;
   align-items: center;
 
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(0.4em);
 
   z-index: 1000;
@@ -522,7 +522,7 @@ p {
 footer {
   width: 100%;
   padding: 0.625em 0; /* 10px */
-  background-color: rgba(0,0,0,0.85);
+  background-color: rgba(0,0,0,0.45);
   color: #f0f0f0;
   text-align: center;
   font-size: 0.875em; /* 14px */
