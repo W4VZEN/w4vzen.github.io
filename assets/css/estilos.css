@@ -466,13 +466,16 @@ p {
   z-index: 1000;
 }
 
+
 .topbar-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   width: 100%;
-  max-width: 60em;  
+  max-width: none;
+  padding: 0 2em;
 }
+
 
 /* LOGO */
 
