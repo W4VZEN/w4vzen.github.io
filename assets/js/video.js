@@ -1,26 +1,56 @@
+
 document.addEventListener("DOMContentLoaded", () => {
 
   const hamburger = document.getElementById("hamburger");
   const navWrapper = document.getElementById("navWrapper");
 
-  /* ===========================
-     MENU HAMBURGUESA
-  =========================== */
-
   if (hamburger && navWrapper) {
 
     hamburger.addEventListener("click", (e) => {
+
       e.stopPropagation();
-      navWrapper.classList.toggle("active");
+
+      const isActive = navWrapper.classList.toggle("active");
+
+      hamburger.setAttribute("aria-expanded", isActive);
+
+      hamburger.innerHTML = isActive
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
 
     });
 
     document.addEventListener("click", (e) => {
+
       if (!navWrapper.contains(e.target) && !hamburger.contains(e.target)) {
+
         navWrapper.classList.remove("active");
-    
+
+        hamburger.setAttribute("aria-expanded", "false");
+
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+
       }
+
     });
+
+    // Cerrar al seleccionar una sección
+
+    navWrapper.querySelectorAll(".menu a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navWrapper.classList.remove("active");
+
+        hamburger.setAttribute("aria-expanded", "false");
+
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+
+      });
+
+    });
+
   }
 
 });
+
