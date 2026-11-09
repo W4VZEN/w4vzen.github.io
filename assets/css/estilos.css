@@ -283,42 +283,62 @@ body::before {
     color:#fff;
 }
 
-/* RADIO CASSETTE PLAY BUTTON */
+/* ===========================
+   BOTÓN ESCUCHAR AHORA
+=========================== */
 
-.listen-btn {
+.listen-motion-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    width: 110px;
-    height: 75px;
+    padding: 18px 35px;
 
-    background: linear-gradient(145deg, #292929, #080808);
-    border: 2px solid #555;
-    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.55);
+    background: rgba(0,0,0,0.35);
 
     color: #fff;
     text-decoration: none;
 
-    box-shadow:
-        0 5px 12px rgba(0,0,0,0.6),
-        inset 0 2px 4px rgba(255,255,255,0.08);
+    font-family: 'Staatliches', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.18em;
 
-    transition: all .25s ease;
+    transition: background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+
+    animation: buttonFloat 2.5s ease-in-out infinite;
 }
 
-.listen-btn i {
-    font-size: 1.8rem;
-    margin-left: 5px;
+/* ANIMACIÓN VERTICAL */
+
+@keyframes buttonFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
 }
 
-.listen-btn:hover {
-    background: #fff;
-    color: #000;
+/* EFECTO HOVER */
+
+.listen-motion-btn:hover {
+    background: rgba(255,255,255,0.15);
     border-color: #fff;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(255,255,255,0.12);
+    box-shadow: 0 8px 25px rgba(255,255,255,0.12);
 }
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+    .listen-motion-btn {
+        animation: none;
+    }
+}
+
 
 /* ===========================
    SHOPS (BANDCAMP STORE)
@@ -846,18 +866,6 @@ footer .social-icons {
     text-align: center;
   }
 
-.listen-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-.listen-btn i {
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
 
 }
 
@@ -1023,20 +1031,6 @@ footer .social-icons {
     margin-bottom: 0.8em;
   }
 
-.listen-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 70px;
-    padding: 0;
-}
-
-.listen-btn i {
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
 
 }
 
