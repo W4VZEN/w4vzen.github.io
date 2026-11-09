@@ -639,16 +639,20 @@ body::after {
 
 
 
-/* ===========================
-   RESPONSIVE - TABLET Y MOBILE
-=========================== */
 
+/* =========================================
+   RESPONSIVE - TABLET Y MOBILE
+========================================= */
+
+
+/* =========================================
+   TABLETS Y CELULARES GRANDES
+   481px - 1100px
+========================================= */
 
 @media (min-width: 481px) and (max-width: 1100px) {
 
-  /* ===========================
-     HERO VIDEO
-  =========================== */
+  /* HERO VIDEO */
 
   .hero-video {
     height: 100vh;
@@ -668,16 +672,27 @@ body::after {
   }
 
 
-  /* ===========================
-     NAVBAR MOBILE
-  =========================== */
+  /* NAVBAR */
 
   .topbar {
     height: 4em;
   }
 
+  .topbar-inner {
+    padding: 0 1.5em;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    margin-right: 0;
+  }
+
   .hamburger {
     display: block;
+    font-size: 1.8em;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1002;
   }
 
   .nav-wrapper {
@@ -685,11 +700,12 @@ body::after {
     top: 4em;
     left: 0;
     width: 100%;
+
     height: auto;
     max-height: 80vh;
     max-height: 80dvh;
 
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.90);
     backdrop-filter: blur(12px);
 
     display: flex;
@@ -697,27 +713,31 @@ body::after {
     align-items: center;
     gap: 2em;
 
-    padding: 3em 0 1em;
+    padding: 3em 0 2em;
     overflow-y: auto;
 
     z-index: 1001;
 
     transform: translateY(-20%);
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 
-    transition: transform 0.25s ease, opacity 0.25s ease;
-    will-change: transform, opacity;
+    transition: transform 0.25s ease,
+                opacity 0.25s ease,
+                visibility 0.25s ease;
   }
 
   .nav-wrapper.active {
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
   }
 
   .menu {
     flex-direction: column;
+    align-items: center;
     gap: 1.5em;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -732,19 +752,18 @@ body::after {
   }
 
 
-/* ICONOS FOOTER - TABLET Y MOBILE */
+  /* ICONOS FOOTER */
 
-footer .social-icons a {
-  font-size: 2.1em;
-}
+  footer .social-icons a {
+    font-size: 2.1em;
+  }
 
-footer .social-icons {
-  gap: 1.4em;
-}
-   
-  /* ===========================
-     RELEASES / VIDEOS
-  =========================== */
+  footer .social-icons {
+    gap: 1.4em;
+  }
+
+
+  /* RELEASES / VIDEOS */
 
   .release {
     flex-direction: column;
@@ -764,57 +783,48 @@ footer .social-icons {
   }
 
 
-   
-/* ==========================
-               BIO
-   ========================*/
+  /* BIO */
+
+  .bio-section {
+    padding: 5em 0;
+  }
+
+  .bio-content {
+    max-width: 650px;
+  }
+
+  .bio-text p {
+    font-size: 0.90rem;
+    line-height: 1.85;
+  }
+
+  .linkedin-profile-link {
+    font-size: 1.1rem;
+    padding: 18px 32px;
+    gap: 1em;
+    letter-spacing: 0.12em;
+    border-width: 1px;
+  }
+
+  .linkedin-profile-link i:first-child {
+    font-size: 1.5em;
+  }
 
 
-   .bio-section {
-        padding: 5em 0;
-    }
+  /* VIDEO YOUTUBE */
 
-    .bio-content {
-        max-width: 650px;
-    }
-
-    .bio-text p {
-        font-size: 0.90rem;
-        line-height: 1.85;
-    }
-   
-    .linkedin-profile-link {
-        font-size: 1.1rem;
-        padding: 18px 32px;
-        gap: 1em;
-        letter-spacing: 0.12em;
-        border-width: 1px;
-    }
-
-    .linkedin-profile-link i:first-child {
-        font-size: 1.5em;
-    }
-
-
-   
-  /* ===========================
-     VIDEO YOUTUBE
-  =========================== */
-
-.video-section {
+  .video-section {
     padding: 4em 0;
-}
+  }
 
-.video-container {
+  .video-container {
     width: 97%;
     max-width: none;
     aspect-ratio: 16 / 9;
-}
+  }
 
 
-  /* ===========================
-     MUSIC SECTION
-  =========================== */
+  /* MUSIC SECTION */
 
   .music-section {
     width: 100%;
@@ -866,20 +876,18 @@ footer .social-icons {
     text-align: center;
   }
 
-
 }
 
 
-/* ===========================
-   MOBILE PEQUEÑO
-   480px
-=========================== */
+/* =========================================
+   CELULARES PEQUEÑOS
+   HASTA 480px
+========================================= */
 
 @media (max-width: 480px) {
 
-  /* ===========================
-     HERO VIDEO
-  =========================== */
+
+  /* HERO VIDEO */
 
   .hero-video {
     height: 100vh;
@@ -893,21 +901,76 @@ footer .social-icons {
   }
 
 
-  /* ===========================
-     NAVBAR
-  =========================== */
+  /* NAVBAR */
 
   .topbar {
+    height: 4em;
     padding: 0 1em;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
   }
 
+  .topbar-inner {
+    padding: 0 0.5em;
+  }
+
   .logo {
     font-size: 1.4em;
+    margin-right: 0;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.7em;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .nav-wrapper {
+    position: fixed;
+    top: 4em;
+    left: 0;
+    width: 100%;
+
+    height: auto;
+    max-height: 80vh;
+    max-height: 80dvh;
+
+    background: rgba(0, 0, 0, 0.90);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8em;
+
+    padding: 2.5em 0 2em;
+    overflow-y: auto;
+
+    z-index: 1001;
+
+    transform: translateY(-20%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: transform 0.25s ease,
+                opacity 0.25s ease,
+                visibility 0.25s ease;
+  }
+
+  .nav-wrapper.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1em;
     font-size: 0.85em;
     margin-bottom: 0;
@@ -918,89 +981,84 @@ footer .social-icons {
     font-size: 1.2em;
   }
 
-
-  /* ===========================
-     ICONOS
-  =========================== */
-
-footer .social-icons a {
-  font-size: 2.3em;
-}
-
-footer .social-icons {
-  gap: 1.3em;
-}
+  .social-icons {
+    gap: 1.2em;
+  }
 
 
-  /* ===========================
-     FOOTER
-  =========================== */
+  /* ICONOS FOOTER */
+
+  footer .social-icons a {
+    font-size: 2.3em;
+  }
+
+  footer .social-icons {
+    gap: 1.3em;
+  }
+
+
+  /* FOOTER */
 
   footer {
     font-size: 0.8em;
   }
 
 
-  /* ===========================
-     RELEASES / VIDEOS
-  =========================== */
+  /* RELEASES / VIDEOS */
 
   .release .video-title {
     font-size: 1em;
   }
 
-/* ==========================
-               BIO
-   ========================*/
 
-    .bio-section {
-        padding: 4em 0;
-    }
+  /* BIO */
 
-    .bio-section .container {
-        width: 90%;
-    }
+  .bio-section {
+    padding: 4em 0;
+  }
 
-    .bio-section .section-title {
-        margin-bottom: 1.5em;
-    }
+  .bio-section .container {
+    width: 90%;
+  }
 
-    .bio-text p {
-        font-size: 0.9rem;
-        line-height: 1.85;
-        margin-bottom: 1.5em;
-    }
+  .bio-section .section-title {
+    margin-bottom: 1.5em;
+  }
 
-    .bio-signature {
-        font-size: 0.85rem;
-        letter-spacing: 0.1em;
-    }
-   
-    .linkedin-profile-link {
-       font-size: 0.8rem;
-       padding: 11px 12px;
-       gap: 0.5em;
-       letter-spacing: 0.05em;
-       max-width: 100%;
-    }
-  /* ===========================
-     VIDEO YOUTUBE
-  =========================== */
+  .bio-text p {
+    font-size: 0.9rem;
+    line-height: 1.85;
+    margin-bottom: 1.5em;
+  }
 
-.video-section {
+  .bio-signature {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .linkedin-profile-link {
+    font-size: 0.8rem;
+    padding: 11px 12px;
+    gap: 0.5em;
+    letter-spacing: 0.05em;
+    max-width: 100%;
+  }
+
+
+  /* VIDEO YOUTUBE */
+
+  .video-section {
     padding: 3.5em 0;
-}
+  }
 
-.video-container {
+  .video-container {
     width: 100%;
     max-width: none;
     aspect-ratio: 16 / 9;
-}
+  }
 
 
-  /* ===========================
-     MUSIC SECTION
-  =========================== */
+  /* MUSIC SECTION */
 
   .music-section {
     padding: 3.5em 1em;
@@ -1030,6 +1088,31 @@ footer .social-icons {
     font-size: 1.5rem;
     margin-bottom: 0.8em;
   }
+
+}
+
+
+/* =========================================
+   ESCRITORIO
+   DESDE 1101px
+========================================= */
+
+@media (min-width: 1101px) {
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-wrapper {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+}
+
 
 
 }
