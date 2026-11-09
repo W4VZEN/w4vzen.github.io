@@ -644,7 +644,7 @@ body::after {
 =========================== */
 
 
-@media (max-width: 481px) and (max-width: 1100px) {
+@media (min-width: 481px) and (max-width: 1100px) {
 
   /* ===========================
      HERO VIDEO
