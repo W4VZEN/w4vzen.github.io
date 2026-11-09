@@ -493,10 +493,11 @@ p {
 /* MENÚ  */
 
 .menu {
-  position: static; 
+  position: static;
   transform: none;
 
   display: flex;
+  flex: 1;
   justify-content: center;
   gap: 2em;
 }
@@ -563,11 +564,17 @@ footer .social-icons a {
 /* ===========================
    NAV WRAPPER (MOBILE MENU)
 =========================== */
+
+
 .nav-wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex: 1;
   gap: 2em;
 }
+
+
 /* ===========================
    ICONOS 
 =========================== */
