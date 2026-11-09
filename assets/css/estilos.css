@@ -640,6 +640,7 @@ body::after {
 
 
 
+
 /* =========================================
    RESPONSIVE - TABLET Y MOBILE
 ========================================= */
@@ -688,11 +689,17 @@ body::after {
   }
 
   .hamburger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 8px;
     font-size: 1.8em;
     color: #fff;
     cursor: pointer;
     z-index: 1002;
+    flex-shrink: 0;
   }
 
   .nav-wrapper {
@@ -828,8 +835,10 @@ body::after {
 
   .music-section {
     width: 100%;
-    margin-left: 0;
+    margin: 0;
     padding: 4em 1.25em;
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
   .music-banner {
@@ -848,6 +857,7 @@ body::after {
   .music-image {
     flex: none;
     width: 100%;
+    max-width: 420px;
     display: flex;
     justify-content: center;
   }
@@ -857,12 +867,14 @@ body::after {
     max-width: 420px;
     height: auto;
     display: block;
+    object-fit: contain;
   }
 
   .music-content {
     width: 100%;
     flex: none;
-    padding-left: 0;
+    min-width: 0;
+    padding: 0;
     text-align: center;
 
     display: flex;
@@ -874,6 +886,17 @@ body::after {
   .music-content h3 {
     margin-bottom: 1em;
     text-align: center;
+  }
+
+  .listen-motion-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    z-index: 5;
+    margin: 10px auto;
   }
 
 }
@@ -920,11 +943,17 @@ body::after {
   }
 
   .hamburger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 8px;
     font-size: 1.7em;
     color: #fff;
     cursor: pointer;
     z-index: 1002;
+    flex-shrink: 0;
   }
 
   .nav-wrapper {
@@ -1061,32 +1090,71 @@ body::after {
   /* MUSIC SECTION */
 
   .music-section {
+    width: 100%;
+    margin: 0;
     padding: 3.5em 1em;
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
   .music-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
     max-width: 360px;
-    gap: 1.25em;
+    margin: 0 auto;
+    gap: 1.5em;
   }
 
   .music-image {
+    flex: none;
     width: 100%;
+    max-width: 340px;
+    display: flex;
+    justify-content: center;
   }
 
   .music-image img {
+    display: block;
     width: 100%;
-    max-width: 360px;
+    max-width: 340px;
+    height: auto;
+    object-fit: contain;
   }
 
   .music-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
+    flex: none;
+    min-width: 0;
     padding: 0;
+    text-align: center;
   }
 
   .music-content h3 {
     font-size: 1.5rem;
     margin-bottom: 0.8em;
+  }
+
+  .listen-motion-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    z-index: 5;
+    margin: 10px auto;
+    padding: 15px 25px;
+    font-size: 1rem;
+    max-width: 100%;
   }
 
 }
@@ -1114,7 +1182,5 @@ body::after {
 }
 
 
-
-}
 
 
