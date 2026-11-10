@@ -1,6 +1,10 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  /* ===========================
+     MENÚ HAMBURGUESA
+  =========================== */
+
   const hamburger = document.getElementById("hamburger");
   const navWrapper = document.getElementById("navWrapper");
 
@@ -52,5 +56,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-});
 
+  /* ===========================
+     PARALLAX BACKGROUND
+  =========================== */
+
+  const background = document.querySelector(".parallax-background");
+
+  if (background) {
+
+    let ticking = false;
+
+    const speed = 0.20;
+
+    function updateParallax() {
+
+      const scrollPosition = window.scrollY;
+
+      background.style.transform =
+        `translate3d(0, ${scrollPosition * speed}px, 0)`;
+
+      ticking = false;
+
+    }
+
+    window.addEventListener("scroll", () => {
+
+      if (!ticking) {
+
+        window.requestAnimationFrame(updateParallax);
+
+        ticking = true;
+
+      }
+
+    }, { passive: true });
+
+    updateParallax();
+
+  }
+
+});
