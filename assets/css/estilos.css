@@ -455,7 +455,7 @@ p {
   justify-content: center;
   align-items: center;
 
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(3, 45, 29, 0.65);
   backdrop-filter: blur(0.4em);
 
   z-index: 1000;
