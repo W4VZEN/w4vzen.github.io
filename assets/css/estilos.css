@@ -20,21 +20,43 @@ body {
 }
 
 
+
 /* ===========================
-   FONDO FIJO GENERAL
+   FONDO PARALLAX GENERAL
 =========================== */
 
-body::before {
-  content: "";
+body {
+  background: #000;
+  color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+.parallax-background {
   position: fixed;
-  inset: 0;
-  z-index: -1;
+  inset: -20% 0;
+  z-index: -2;
+  pointer-events: none;
 
   background-image: url('/assets/img/fondo-escritorio.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
+  will-change: transform;
 }
+
+.parallax-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: rgba(0, 0, 0, 0.25);
+}
+
 
 /* ===========================
    CONTENIDO
@@ -598,23 +620,6 @@ footer .social-icons a {
   color: #fff;
   transform: scale(1.1);
 }
-
-
-
-/* ===========================
-   CAPA OSCURA SOBRE EL FONDO
-=========================== */
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: -1;
-    pointer-events: none;
-}
-
-
 
 
 
