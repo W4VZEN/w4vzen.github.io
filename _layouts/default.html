@@ -33,7 +33,13 @@
   <link rel="stylesheet" href="{{ '/assets/css/estilos.css' | relative_url }}">
 </head>
 
+
 <body>
+
+  <!-- FONDO PARALLAX -->
+  <div class="parallax-background"></div>
+  <div class="parallax-overlay"></div>
+
   {% include header.html %}
 
   {{ content }}
@@ -42,5 +48,7 @@
 
   <!-- JavaScript -->
   <script src="{{ '/assets/js/video.js' | relative_url }}"></script>
+
 </body>
+
 </html>
