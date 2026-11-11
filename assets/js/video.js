@@ -77,8 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+
   /* =====================================
-     PARALLAX BACKGROUND
+     PARALLAX BACKGROUND - SMOOTH VERSION
   ===================================== */
 
   const background = document.querySelector(".parallax-background");
@@ -92,21 +93,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const backgroundImage = getComputedStyle(background).backgroundImage;
 
-    const imageMatch = backgroundImage.match(
-      /^url\(["']?(.*?)["']?\)$/
-    );
+    const imageMatch = backgroundImage.match(/^url\(["']?(.*?)["']?\)$/);
 
     const imageURL = imageMatch
       ? imageMatch[1]
       : "/assets/img/fondo-escritorio.webp";
 
-    let ticking = false;
     let maxTravel = 0;
     let imageReady = false;
 
+    let targetPosition = 0;
+    let currentPosition = 0;
+
+    let animationFrame = null;
+
+    // Intensidad del suavizado.
+    // Menor valor = más inercia.
+    // Mayor valor = respuesta más rápida.
+    const smoothness = 0.075;
+
 
     /* =====================================
-       CALCULAR PARALLAX
+       CALCULAR DIMENSIONES
     ===================================== */
 
     function calculateParallax() {
@@ -134,21 +142,16 @@ document.addEventListener("DOMContentLoaded", () => {
       background.style.backgroundSize =
         `${renderedWidth}px ${renderedHeight}px`;
 
-      updateParallax();
+      updateTargetPosition();
 
     }
 
 
     /* =====================================
-       ACTUALIZAR POSICIÓN
+       CALCULAR POSICIÓN OBJETIVO
     ===================================== */
 
-    function updateParallax() {
-
-      if (!imageReady) {
-        ticking = false;
-        return;
-      }
+    function updateTargetPosition() {
 
       const scrollPosition = window.scrollY;
 
@@ -156,33 +159,43 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.scrollHeight - window.innerHeight;
 
       const progress = maxScroll > 0
-        ? Math.min(
-            Math.max(scrollPosition / maxScroll, 0),
-            1
-          )
+        ? Math.min(Math.max(scrollPosition / maxScroll, 0), 1)
         : 0;
 
-      const position = progress * maxTravel;
+      targetPosition = progress * maxTravel;
 
-      background.style.backgroundPosition =
-        `center -${position}px`;
-
-      ticking = false;
+      if (animationFrame === null) {
+        animationFrame = requestAnimationFrame(animateParallax);
+      }
 
     }
 
 
     /* =====================================
-       OPTIMIZAR SCROLL
+       MOVIMIENTO SUAVE E INTERPOLADO
     ===================================== */
 
-    function requestParallaxUpdate() {
+    function animateParallax() {
 
-      if (!ticking) {
+      const difference = targetPosition - currentPosition;
 
-        ticking = true;
+      currentPosition += difference * smoothness;
 
-        window.requestAnimationFrame(updateParallax);
+      // Evita oscilaciones infinitas por diferencias mínimas.
+      if (Math.abs(difference) < 0.15) {
+        currentPosition = targetPosition;
+      }
+
+      background.style.backgroundPosition =
+        `center -${currentPosition.toFixed(2)}px`;
+
+      if (currentPosition !== targetPosition) {
+
+        animationFrame = requestAnimationFrame(animateParallax);
+
+      } else {
+
+        animationFrame = null;
 
       }
 
@@ -193,12 +206,12 @@ document.addEventListener("DOMContentLoaded", () => {
        CARGA DE IMAGEN
     ===================================== */
 
-    // Primero registramos los eventos.
-    // Después iniciamos la descarga.
-
     image.onload = () => {
 
       imageReady = true;
+
+      currentPosition = 0;
+      targetPosition = 0;
 
       calculateParallax();
 
@@ -212,7 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-    // Iniciar carga después de registrar onload y onerror.
     image.src = imageURL;
 
 
@@ -222,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener(
       "scroll",
-      requestParallaxUpdate,
+      updateTargetPosition,
       { passive: true }
     );
 
@@ -232,5 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   }
+
 
 });
