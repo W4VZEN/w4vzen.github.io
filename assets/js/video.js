@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Cerrar al hacer clic fuera del menú
+    // Cerrar al hacer clic fuera del menú.
     document.addEventListener("click", (event) => {
 
       if (
@@ -49,14 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Cerrar al seleccionar una sección
+    // Cerrar al seleccionar una sección.
     navWrapper.querySelectorAll(".menu a").forEach(link => {
-
       link.addEventListener("click", closeMenu);
-
     });
 
-    // Cerrar con Escape
+    // Cerrar con Escape.
     document.addEventListener("keydown", (event) => {
 
       if (event.key === "Escape") {
@@ -65,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Restablecer al pasar a escritorio
+    // Restablecer al pasar a escritorio.
     window.addEventListener("resize", () => {
 
       if (window.innerWidth > 1100) {
@@ -77,9 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-
   /* =====================================
-     PARALLAX BACKGROUND - SMOOTH VERSION
+     PARALLAX BACKGROUND
+     INERCIA + TAMAÑO ESTABLE EN MOBILE
   ===================================== */
 
   const background = document.querySelector(".parallax-background");
@@ -93,42 +91,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const backgroundImage = getComputedStyle(background).backgroundImage;
 
-    const imageMatch = backgroundImage.match(/^url\(["']?(.*?)["']?\)$/);
+    const imageMatch = backgroundImage.match(
+      /^url\(["']?(.*?)["']?\)$/
+    );
 
     const imageURL = imageMatch
       ? imageMatch[1]
       : "/assets/img/fondo-escritorio.webp";
 
-    let maxTravel = 0;
     let imageReady = false;
 
-    let targetPosition = 0;
+    let maxTravel = 0;
+
     let currentPosition = 0;
+    let targetPosition = 0;
+    let velocity = 0;
 
     let animationFrame = null;
 
-    // Intensidad del suavizado.
-    // Menor valor = más inercia.
-    // Mayor valor = respuesta más rápida.
-    const smoothness = 0.075;
+    // Dimensiones estables del viewport.
+    let baseWidth = window.innerWidth;
+    let baseHeight = window.innerHeight;
+
+    // Física del movimiento.
+    const stiffness = 0.012;
+    const damping = 0.90;
 
 
     /* =====================================
-       CALCULAR DIMENSIONES
+       CALCULAR TAMAÑO DEL FONDO
     ===================================== */
 
     function calculateParallax() {
 
       if (!imageReady) return;
 
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
+      baseWidth = window.innerWidth;
+      baseHeight = window.innerHeight;
 
-      const extraTravel = viewportHeight * 0.35;
+      const extraTravel = baseHeight * 0.35;
 
       const scale = Math.max(
-        viewportWidth / image.naturalWidth,
-        (viewportHeight + extraTravel) / image.naturalHeight
+        baseWidth / image.naturalWidth,
+        (baseHeight + extraTravel) / image.naturalHeight
       );
 
       const renderedWidth = image.naturalWidth * scale;
@@ -136,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       maxTravel = Math.max(
         0,
-        renderedHeight - viewportHeight
+        renderedHeight - baseHeight
       );
 
       background.style.backgroundSize =
@@ -148,19 +153,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================
-       CALCULAR POSICIÓN OBJETIVO
+       POSICIÓN OBJETIVO
     ===================================== */
 
     function updateTargetPosition() {
 
+      if (!imageReady) return;
+
       const scrollPosition = window.scrollY;
 
-      const maxScroll =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const maxScroll = Math.max(
+        1,
+        document.documentElement.scrollHeight - baseHeight
+      );
 
-      const progress = maxScroll > 0
-        ? Math.min(Math.max(scrollPosition / maxScroll, 0), 1)
-        : 0;
+      const progress = Math.min(
+        Math.max(scrollPosition / maxScroll, 0),
+        1
+      );
 
       targetPosition = progress * maxTravel;
 
@@ -172,32 +182,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================
-       MOVIMIENTO SUAVE E INTERPOLADO
+       MOVIMIENTO CON INERCIA
     ===================================== */
 
     function animateParallax() {
 
       const difference = targetPosition - currentPosition;
 
-      currentPosition += difference * smoothness;
+      // Aceleración hacia la posición objetivo.
+      velocity += difference * stiffness;
 
-      // Evita oscilaciones infinitas por diferencias mínimas.
-      if (Math.abs(difference) < 0.15) {
+      // Desaceleración progresiva.
+      velocity *= damping;
+
+      // Desplazamiento.
+      currentPosition += velocity;
+
+      // Detención natural.
+      if (
+        Math.abs(difference) < 0.08 &&
+        Math.abs(velocity) < 0.025
+      ) {
+
         currentPosition = targetPosition;
+        velocity = 0;
+
+        background.style.backgroundPosition =
+          `center -${currentPosition.toFixed(2)}px`;
+
+        animationFrame = null;
+
+        return;
       }
 
       background.style.backgroundPosition =
         `center -${currentPosition.toFixed(2)}px`;
 
-      if (currentPosition !== targetPosition) {
-
-        animationFrame = requestAnimationFrame(animateParallax);
-
-      } else {
-
-        animationFrame = null;
-
-      }
+      animationFrame = requestAnimationFrame(animateParallax);
 
     }
 
@@ -209,9 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
     image.onload = () => {
 
       imageReady = true;
-
-      currentPosition = 0;
-      targetPosition = 0;
 
       calculateParallax();
 
@@ -238,12 +256,16 @@ document.addEventListener("DOMContentLoaded", () => {
       { passive: true }
     );
 
-    window.addEventListener(
-      "resize",
-      calculateParallax
-    );
+    // Ignorar cambios de altura de las barras
+    // del navegador móvil.
+    window.addEventListener("resize", () => {
+
+      if (window.innerWidth !== baseWidth) {
+        calculateParallax();
+      }
+
+    });
 
   }
-
 
 });
