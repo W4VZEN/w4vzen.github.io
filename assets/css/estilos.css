@@ -853,7 +853,7 @@ footer .social-icons a {
   .music-section {
     width: 100%;
     margin: 0;
-    padding: 4em 1.25em;
+    padding: 5.5em 1.25em 4em;
     overflow: hidden;
     box-sizing: border-box;
   }
@@ -1118,7 +1118,7 @@ footer .social-icons a {
   .music-section {
     width: 100%;
     margin: 0;
-    padding: 3.5em 1em;
+    padding: 5em 1em 3.5em;
     overflow: hidden;
     box-sizing: border-box;
   }
