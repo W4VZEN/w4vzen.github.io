@@ -575,12 +575,31 @@ footer .social-icons a {
    HAMBURGER BUTTON
 =========================== */
 
+
+/* ===========================
+   HAMBURGER BUTTON
+=========================== */
+
 .hamburger {
   display: none;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
   color: #fff;
   font-size: 1.8em;
   cursor: pointer;
+
   margin-left: 1em;
+  padding: 8px;
+
+  position: relative;
+  z-index: 1002;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ===========================
