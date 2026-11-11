@@ -57,43 +57,53 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* ===========================
-     PARALLAX BACKGROUND
-  =========================== */
+  
+/* ===========================
+   PARALLAX BACKGROUND
+=========================== */
 
-  const background = document.querySelector(".parallax-background");
+const background = document.querySelector(".parallax-background");
 
-  if (background) {
+if (background) {
 
-    let ticking = false;
+  let ticking = false;
 
-    const speed = 0.20;
+  function updateParallax() {
 
-    function updateParallax() {
+    const scrollPosition = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
-      const scrollPosition = window.scrollY;
+    // Progreso del recorrido: 0 a 100%
+    const progress = maxScroll > 0
+      ? Math.min(scrollPosition / maxScroll, 1)
+      : 0;
 
-      background.style.transform =
-        `translate3d(0, ${scrollPosition * speed}px, 0)`;
+    // Recorre verticalmente la imagen
+    const position = progress * 100;
 
-      ticking = false;
+    background.style.backgroundPosition =
+      `center ${position}%`;
+
+    ticking = false;
+
+  }
+
+  window.addEventListener("scroll", () => {
+
+    if (!ticking) {
+
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
 
     }
 
-    window.addEventListener("scroll", () => {
+  }, { passive: true });
 
-      if (!ticking) {
+  window.addEventListener("resize", updateParallax);
 
-        window.requestAnimationFrame(updateParallax);
+  updateParallax();
 
-        ticking = true;
+}
 
-      }
-
-    }, { passive: true });
-
-    updateParallax();
-
-  }
 
 });
