@@ -59,9 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 
+
 /* ===========================
    PARALLAX BACKGROUND
-   DESKTOP + TABLET + MOBILE
 =========================== */
 
 const background = document.querySelector(".parallax-background");
@@ -73,23 +73,24 @@ if (background) {
   function updateParallax() {
 
     const scrollPosition = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
-    const maxScroll =
-      document.documentElement.scrollHeight - window.innerHeight;
-
+    // Progreso del recorrido: 0 a 100%
     const progress = maxScroll > 0
-      ? Math.min(Math.max(scrollPosition / maxScroll, 0), 1)
+      ? Math.min(scrollPosition / maxScroll, 1)
       : 0;
 
+    // Recorre verticalmente la imagen
     const position = progress * 100;
 
     background.style.backgroundPosition =
       `center ${position}%`;
 
     ticking = false;
+
   }
 
-  function requestParallaxUpdate() {
+  window.addEventListener("scroll", () => {
 
     if (!ticking) {
 
@@ -98,16 +99,11 @@ if (background) {
 
     }
 
-  }
+  }, { passive: true });
 
-  window.addEventListener("scroll", requestParallaxUpdate, {
-    passive: true
-  });
-
-  window.addEventListener("resize", requestParallaxUpdate);
-
-  window.addEventListener("orientationchange", requestParallaxUpdate);
+  window.addEventListener("resize", updateParallax);
 
   updateParallax();
 
 }
+
