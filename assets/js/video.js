@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     hamburger.addEventListener("click", (event) => {
+
       event.stopPropagation();
 
       if (navWrapper.classList.contains("active")) {
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         openMenu();
       }
+
     });
 
     // Cerrar al hacer clic fuera del menú
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Cerrar con la tecla Escape
+    // Cerrar con Escape
     document.addEventListener("keydown", (event) => {
 
       if (event.key === "Escape") {
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Restablecer el menú al pasar a escritorio
+    // Restablecer al pasar a escritorio
     window.addEventListener("resize", () => {
 
       if (window.innerWidth > 1100) {
@@ -85,10 +87,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const image = new Image();
 
-    const backgroundImage = getComputedStyle(background).backgroundImage;
-    const imageMatch = backgroundImage.match(/^url\(["']?(.*?)["']?\)$/);
+    image.decoding = "async";
+    image.fetchPriority = "high";
 
-    image.src = imageMatch
+    const backgroundImage = getComputedStyle(background).backgroundImage;
+
+    const imageMatch = backgroundImage.match(
+      /^url\(["']?(.*?)["']?\)$/
+    );
+
+    const imageURL = imageMatch
       ? imageMatch[1]
       : "/assets/img/fondo-escritorio.webp";
 
@@ -96,8 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let maxTravel = 0;
     let imageReady = false;
 
-    // Calcula el tamaño necesario para permitir
-    // que la imagen se desplace verticalmente.
+
+    /* =====================================
+       CALCULAR PARALLAX
+    ===================================== */
 
     function calculateParallax() {
 
@@ -106,11 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
 
-      // Espacio adicional para el desplazamiento
       const extraTravel = viewportHeight * 0.35;
 
-      // Escala que garantiza cubrir la pantalla
-      // y disponer de recorrido vertical.
       const scale = Math.max(
         viewportWidth / image.naturalWidth,
         (viewportHeight + extraTravel) / image.naturalHeight
@@ -119,7 +126,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const renderedWidth = image.naturalWidth * scale;
       const renderedHeight = image.naturalHeight * scale;
 
-      maxTravel = Math.max(0, renderedHeight - viewportHeight);
+      maxTravel = Math.max(
+        0,
+        renderedHeight - viewportHeight
+      );
 
       background.style.backgroundSize =
         `${renderedWidth}px ${renderedHeight}px`;
@@ -129,11 +139,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // Actualiza la posición según el scroll
+    /* =====================================
+       ACTUALIZAR POSICIÓN
+    ===================================== */
 
     function updateParallax() {
 
-      if (!imageReady) return;
+      if (!imageReady) {
+        ticking = false;
+        return;
+      }
 
       const scrollPosition = window.scrollY;
 
@@ -141,7 +156,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.scrollHeight - window.innerHeight;
 
       const progress = maxScroll > 0
-        ? Math.min(Math.max(scrollPosition / maxScroll, 0), 1)
+        ? Math.min(
+            Math.max(scrollPosition / maxScroll, 0),
+            1
+          )
         : 0;
 
       const position = progress * maxTravel;
@@ -154,22 +172,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // Optimiza las actualizaciones durante el scroll
+    /* =====================================
+       OPTIMIZAR SCROLL
+    ===================================== */
 
     function requestParallaxUpdate() {
 
       if (!ticking) {
 
-        window.requestAnimationFrame(updateParallax);
-
         ticking = true;
+
+        window.requestAnimationFrame(updateParallax);
 
       }
 
     }
 
 
-    // Esperar a que cargue la imagen
+    /* =====================================
+       CARGA DE IMAGEN
+    ===================================== */
+
+    // Primero registramos los eventos.
+    // Después iniciamos la descarga.
 
     image.onload = () => {
 
@@ -179,15 +204,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-
     image.onerror = () => {
 
-      console.warn("No se pudo cargar la imagen de fondo Parallax.");
+      console.warn(
+        "No se pudo cargar la imagen de fondo Parallax."
+      );
 
     };
 
+    // Iniciar carga después de registrar onload y onerror.
+    image.src = imageURL;
 
-    // Eventos
+
+    /* =====================================
+       EVENTOS
+    ===================================== */
 
     window.addEventListener(
       "scroll",
@@ -195,9 +226,10 @@ document.addEventListener("DOMContentLoaded", () => {
       { passive: true }
     );
 
-    window.addEventListener("resize", calculateParallax);
-
-    window.addEventListener("load", calculateParallax);
+    window.addEventListener(
+      "resize",
+      calculateParallax
+    );
 
   }
 
