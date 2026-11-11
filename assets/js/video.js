@@ -1,109 +1,204 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===========================
+  /* =====================================
      MENÚ HAMBURGUESA
-  =========================== */
+  ===================================== */
 
   const hamburger = document.getElementById("hamburger");
   const navWrapper = document.getElementById("navWrapper");
 
   if (hamburger && navWrapper) {
 
-    hamburger.addEventListener("click", (e) => {
+    const openMenu = () => {
+      navWrapper.classList.add("active");
+      hamburger.setAttribute("aria-expanded", "true");
+      hamburger.setAttribute("aria-label", "Cerrar menú");
+      hamburger.innerHTML = '<i class="fas fa-times"></i>';
+    };
 
-      e.stopPropagation();
+    const closeMenu = () => {
+      navWrapper.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+      hamburger.setAttribute("aria-label", "Abrir menú");
+      hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    };
 
-      const isActive = navWrapper.classList.toggle("active");
+    hamburger.addEventListener("click", (event) => {
+      event.stopPropagation();
 
-      hamburger.setAttribute("aria-expanded", isActive);
-
-      hamburger.innerHTML = isActive
-        ? '<i class="fas fa-times"></i>'
-        : '<i class="fas fa-bars"></i>';
-
+      if (navWrapper.classList.contains("active")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
-    document.addEventListener("click", (e) => {
+    // Cerrar al hacer clic fuera del menú
+    document.addEventListener("click", (event) => {
 
-      if (!navWrapper.contains(e.target) && !hamburger.contains(e.target)) {
-
-        navWrapper.classList.remove("active");
-
-        hamburger.setAttribute("aria-expanded", "false");
-
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-
+      if (
+        navWrapper.classList.contains("active") &&
+        !navWrapper.contains(event.target) &&
+        !hamburger.contains(event.target)
+      ) {
+        closeMenu();
       }
 
     });
 
     // Cerrar al seleccionar una sección
-
     navWrapper.querySelectorAll(".menu a").forEach(link => {
 
-      link.addEventListener("click", () => {
+      link.addEventListener("click", closeMenu);
 
-        navWrapper.classList.remove("active");
+    });
 
-        hamburger.setAttribute("aria-expanded", "false");
+    // Cerrar con la tecla Escape
+    document.addEventListener("keydown", (event) => {
 
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      if (event.key === "Escape") {
+        closeMenu();
+      }
 
-      });
+    });
+
+    // Restablecer el menú al pasar a escritorio
+    window.addEventListener("resize", () => {
+
+      if (window.innerWidth > 1100) {
+        closeMenu();
+      }
 
     });
 
   }
 
 
-  
+  /* =====================================
+     PARALLAX BACKGROUND
+  ===================================== */
 
+  const background = document.querySelector(".parallax-background");
 
-/* ===========================
-   PARALLAX BACKGROUND
-=========================== */
+  if (background) {
 
-const background = document.querySelector(".parallax-background");
+    const image = new Image();
 
-if (background) {
+    const backgroundImage = getComputedStyle(background).backgroundImage;
+    const imageMatch = backgroundImage.match(/^url\(["']?(.*?)["']?\)$/);
 
-  let ticking = false;
+    image.src = imageMatch
+      ? imageMatch[1]
+      : "/assets/img/fondo-escritorio.webp";
 
-  function updateParallax() {
+    let ticking = false;
+    let maxTravel = 0;
+    let imageReady = false;
 
-    const scrollPosition = window.scrollY;
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    // Calcula el tamaño necesario para permitir
+    // que la imagen se desplace verticalmente.
 
-    // Progreso del recorrido: 0 a 100%
-    const progress = maxScroll > 0
-      ? Math.min(scrollPosition / maxScroll, 1)
-      : 0;
+    function calculateParallax() {
 
-    // Recorre verticalmente la imagen
-    const position = progress * 100;
+      if (!imageReady) return;
 
-    background.style.backgroundPosition =
-      `center ${position}%`;
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
 
-    ticking = false;
+      // Espacio adicional para el desplazamiento
+      const extraTravel = viewportHeight * 0.35;
 
-  }
+      // Escala que garantiza cubrir la pantalla
+      // y disponer de recorrido vertical.
+      const scale = Math.max(
+        viewportWidth / image.naturalWidth,
+        (viewportHeight + extraTravel) / image.naturalHeight
+      );
 
-  window.addEventListener("scroll", () => {
+      const renderedWidth = image.naturalWidth * scale;
+      const renderedHeight = image.naturalHeight * scale;
 
-    if (!ticking) {
+      maxTravel = Math.max(0, renderedHeight - viewportHeight);
 
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
+      background.style.backgroundSize =
+        `${renderedWidth}px ${renderedHeight}px`;
+
+      updateParallax();
 
     }
 
-  }, { passive: true });
 
-  window.addEventListener("resize", updateParallax);
+    // Actualiza la posición según el scroll
 
-  updateParallax();
+    function updateParallax() {
 
-}
+      if (!imageReady) return;
 
+      const scrollPosition = window.scrollY;
+
+      const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const progress = maxScroll > 0
+        ? Math.min(Math.max(scrollPosition / maxScroll, 0), 1)
+        : 0;
+
+      const position = progress * maxTravel;
+
+      background.style.backgroundPosition =
+        `center -${position}px`;
+
+      ticking = false;
+
+    }
+
+
+    // Optimiza las actualizaciones durante el scroll
+
+    function requestParallaxUpdate() {
+
+      if (!ticking) {
+
+        window.requestAnimationFrame(updateParallax);
+
+        ticking = true;
+
+      }
+
+    }
+
+
+    // Esperar a que cargue la imagen
+
+    image.onload = () => {
+
+      imageReady = true;
+
+      calculateParallax();
+
+    };
+
+
+    image.onerror = () => {
+
+      console.warn("No se pudo cargar la imagen de fondo Parallax.");
+
+    };
+
+
+    // Eventos
+
+    window.addEventListener(
+      "scroll",
+      requestParallaxUpdate,
+      { passive: true }
+    );
+
+    window.addEventListener("resize", calculateParallax);
+
+    window.addEventListener("load", calculateParallax);
+
+  }
+
+});
