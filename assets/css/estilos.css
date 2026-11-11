@@ -1177,3 +1177,30 @@ footer .social-icons a {
 
 }
 
+
+/* ===========================
+   PARALLAX RESPONSIVE
+=========================== */
+
+.parallax-background {
+  position: fixed;
+  inset: 0;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+/* TABLETS Y CELULARES */
+
+@media (max-width: 1100px) {
+
+  .parallax-background {
+    position: fixed;
+    inset: 0;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+}
