@@ -1207,3 +1207,36 @@ footer .social-icons a {
 
 }
 
+
+
+/* =========================================
+   FONDOS RESPONSIVE - TABLET Y MOBILE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .parallax-background {
+    background-image: url('/assets/img/fondo-movil.webp');
+  }
+
+  .hero-video {
+    background-image: url('/assets/img/fondo-movil.webp');
+  }
+
+}
+
+/* =========================================
+   FONDOS RESPONSIVE - TABLET Y MOBILE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .parallax-background {
+    background-image: url('/assets/img/fondo-movil.webp');
+  }
+
+  .hero-video {
+    background-image: url('/assets/img/fondo-movil.webp');
+  }
+
+}
