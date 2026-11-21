@@ -40,13 +40,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-  <!-- Precarga de imagen provisional del HERO -->
-  <link
-    rel="preload"
-    as="image"
-    href="{{ '/assets/img/fondo-escritorio.webp' | relative_url }}"
-    fetchpriority="high"
-  >
+<!-- PRE CARGA RESPONSIVE DE FONDOS -->
+
+<link
+  rel="preload"
+  as="image"
+  href="{{ '/assets/img/fondo-escritorio.webp' | relative_url }}"
+  media="(min-width: 1101px)"
+  fetchpriority="high"
+>
+
+<link
+  rel="preload"
+  as="image"
+  href="{{ '/assets/img/fondo-movil.webp' | relative_url }}"
+  media="(max-width: 1100px)"
+  fetchpriority="high"
+>
 
   <!-- Google Fonts -->
   <link
