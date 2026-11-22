@@ -30,7 +30,13 @@ body {
 
 .parallax-background {
   position: fixed;
-  inset: 0;
+
+  /* Sobredimensionar verticalmente el fondo */
+  top: -100px;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+
   z-index: -2;
   pointer-events: none;
 
@@ -41,7 +47,6 @@ body {
 
   will-change: background-position;
 }
-
 .parallax-overlay {
   position: fixed;
   inset: 0;
