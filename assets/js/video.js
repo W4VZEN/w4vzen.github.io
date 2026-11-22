@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Cerrar al hacer clic fuera del menú
     document.addEventListener("click", (event) => {
 
       if (
@@ -49,14 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Cerrar al seleccionar una sección
     navWrapper.querySelectorAll(".menu a").forEach(link => {
-
       link.addEventListener("click", closeMenu);
-
     });
 
-    // Cerrar con Escape
     document.addEventListener("keydown", (event) => {
 
       if (event.key === "Escape") {
@@ -65,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Restablecer al pasar a escritorio
     window.addEventListener("resize", () => {
 
       if (window.innerWidth > 1100) {
@@ -77,195 +71,202 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-
-
-/* =====================================
-   PARALLAX BACKGROUND
-===================================== */
-
-const background = document.querySelector(".parallax-background");
-
-if (background) {
-
-  const imageURL = "/assets/img/fondo-escritorio.webp";
-
-  const image = new Image();
-
-  image.decoding = "async";
-  image.fetchPriority = "high";
-
-  let imageReady = false;
-  let animationFrame = null;
-
-  let maxTravel = 0;
-  let currentPosition = 0;
-  let targetPosition = 0;
-
-  const parallaxLayer = document.createElement("div");
-
-  Object.assign(parallaxLayer.style, {
-    position: "absolute",
-    top: "0",
-    left: "50%",
-    backgroundImage: `url("${imageURL}")`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center top",
-    willChange: "transform"
-  });
-
-  background.appendChild(parallaxLayer);
-
-
   /* =====================================
-     CALCULAR DIMENSIONES
+     PARALLAX BACKGROUND
   ===================================== */
 
-  function calculateParallax() {
+  const background = document.querySelector(".parallax-background");
 
-    if (!imageReady) return;
+  if (background) {
 
-    const viewportWidth = document.documentElement.clientWidth;
-    const viewportHeight = background.clientHeight;
+    const imageURL = "/assets/img/fondo-escritorio.webp";
 
-    // Margen adicional arriba y abajo
-    const requiredHeight = viewportHeight * 1.7;
+    const image = new Image();
 
-    const scale = Math.max(
-      viewportWidth / image.naturalWidth,
-      requiredHeight / image.naturalHeight
-    );
+    image.decoding = "async";
+    image.fetchPriority = "high";
 
-    const renderedWidth = image.naturalWidth * scale;
-    const renderedHeight = image.naturalHeight * scale;
+    let imageReady = false;
+    let animationFrame = null;
 
-    parallaxLayer.style.width = `${renderedWidth}px`;
-    parallaxLayer.style.height = `${renderedHeight}px`;
+    let maxTravel = 0;
+    let currentPosition = 0;
+    let targetPosition = 0;
 
-    parallaxLayer.style.backgroundSize =
-      `${renderedWidth}px ${renderedHeight}px`;
+    const parallaxLayer = document.createElement("div");
 
-    // Espacio de seguridad para el movimiento
-    maxTravel = Math.max(
-      0,
-      (renderedHeight - viewportHeight) / 2
-    );
+    Object.assign(parallaxLayer.style, {
+      position: "absolute",
+      top: "0",
+      left: "50%",
+      backgroundImage: `url("${imageURL}")`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center top",
+      willChange: "transform"
+    });
 
-    currentPosition = Math.min(currentPosition, maxTravel);
-
-    // Comenzar con imagen sobrante arriba y abajo
-    parallaxLayer.style.transform =
-      `translate3d(-50%, ${-maxTravel - currentPosition}px, 0)`;
-
-    updateTarget();
-  }
+    background.appendChild(parallaxLayer);
 
 
-  /* =====================================
-     POSICIÓN OBJETIVO
-  ===================================== */
+    /* =====================================
+       CALCULAR DIMENSIONES
+    ===================================== */
 
-  function updateTarget() {
+    function calculateParallax() {
 
-    const scrollPosition = window.scrollY;
+      if (!imageReady) return;
 
-    const maxScroll = Math.max(
-      1,
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight
-    );
+      const viewportWidth = document.documentElement.clientWidth;
+      const viewportHeight = background.clientHeight;
 
-    const progress = Math.min(
-      1,
-      Math.max(0, scrollPosition / maxScroll)
-    );
+      // Altura adicional para evitar zonas sin imagen.
+      const requiredHeight = viewportHeight * 1.7;
 
-    targetPosition = progress * maxTravel;
+      const scale = Math.max(
+        viewportWidth / image.naturalWidth,
+        requiredHeight / image.naturalHeight
+      );
 
-    startAnimation();
-  }
+      const renderedWidth = image.naturalWidth * scale;
+      const renderedHeight = image.naturalHeight * scale;
 
+      parallaxLayer.style.width = `${renderedWidth}px`;
+      parallaxLayer.style.height = `${renderedHeight}px`;
 
-  /* =====================================
-     MOVIMIENTO CON INERCIA
-  ===================================== */
+      parallaxLayer.style.backgroundSize =
+        `${renderedWidth}px ${renderedHeight}px`;
 
-  function animateParallax() {
+      maxTravel = Math.max(
+        0,
+        renderedHeight - viewportHeight
+      );
 
-    const difference = targetPosition - currentPosition;
+      currentPosition = Math.min(
+        Math.max(currentPosition, 0),
+        maxTravel
+      );
 
-    currentPosition += difference * 0.16;
+      parallaxLayer.style.transform =
+        `translate3d(-50%, ${-currentPosition}px, 0)`;
 
-    if (Math.abs(difference) < 0.3) {
-      currentPosition = targetPosition;
+      updateTarget();
+
     }
 
-    parallaxLayer.style.transform =
-      `translate3d(-50%, ${-maxTravel - currentPosition}px, 0)`;
 
-    if (currentPosition !== targetPosition) {
+    /* =====================================
+       POSICIÓN OBJETIVO
+    ===================================== */
 
-      animationFrame = requestAnimationFrame(animateParallax);
+    function updateTarget() {
 
-    } else {
+      if (!imageReady) return;
 
-      animationFrame = null;
+      const scrollPosition = window.scrollY;
+
+      const maxScroll = Math.max(
+        1,
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight
+      );
+
+      const progress = Math.min(
+        1,
+        Math.max(0, scrollPosition / maxScroll)
+      );
+
+      targetPosition = progress * maxTravel;
+
+      startAnimation();
 
     }
+
+
+    /* =====================================
+       MOVIMIENTO SUAVE CON INERCIA
+    ===================================== */
+
+    function animateParallax() {
+
+      const difference = targetPosition - currentPosition;
+
+      currentPosition += difference * 0.16;
+
+      if (Math.abs(difference) < 0.3) {
+        currentPosition = targetPosition;
+      }
+
+      parallaxLayer.style.transform =
+        `translate3d(-50%, ${-currentPosition}px, 0)`;
+
+      if (currentPosition !== targetPosition) {
+
+        animationFrame = requestAnimationFrame(animateParallax);
+
+      } else {
+
+        animationFrame = null;
+
+      }
+
+    }
+
+
+    function startAnimation() {
+
+      if (animationFrame === null) {
+        animationFrame = requestAnimationFrame(animateParallax);
+      }
+
+    }
+
+
+    /* =====================================
+       CARGAR IMAGEN
+    ===================================== */
+
+    image.onload = () => {
+
+      imageReady = true;
+
+      calculateParallax();
+
+    };
+
+    image.onerror = () => {
+
+      console.warn("Error al cargar el fondo Parallax.");
+
+    };
+
+    image.src = imageURL;
+
+
+    /* =====================================
+       EVENTOS
+    ===================================== */
+
+    window.addEventListener(
+      "scroll",
+      updateTarget,
+      { passive: true }
+    );
+
+    window.addEventListener(
+      "resize",
+      () => {
+        requestAnimationFrame(calculateParallax);
+      },
+      { passive: true }
+    );
+
+    window.addEventListener(
+      "orientationchange",
+      () => {
+        requestAnimationFrame(calculateParallax);
+      }
+    );
+
   }
-
-
-  function startAnimation() {
-
-    if (animationFrame === null) {
-      animationFrame = requestAnimationFrame(animateParallax);
-    }
-
-  }
-
-
-  /* =====================================
-     CARGAR IMAGEN
-  ===================================== */
-
-  image.onload = () => {
-
-    imageReady = true;
-
-    calculateParallax();
-
-  };
-
-  image.onerror = () => {
-
-    console.warn("Error al cargar el fondo Parallax.");
-
-  };
-
-  image.src = imageURL;
-
-
-  /* =====================================
-     EVENTOS
-  ===================================== */
-
-  window.addEventListener(
-    "scroll",
-    updateTarget,
-    { passive: true }
-  );
-
-  // Recalcular solamente al cambiar orientación
-  window.addEventListener(
-    "orientationchange",
-    () => {
-      requestAnimationFrame(calculateParallax);
-    }
-  );
-
-}
-
-
 
 });
-
-
