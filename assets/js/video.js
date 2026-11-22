@@ -194,7 +194,7 @@ if (background) {
 
     const difference = targetPosition - currentPosition;
 
-    currentPosition += difference * 0.12;
+    currentPosition += difference * 0.16;
 
     if (Math.abs(difference) < 0.3) {
       currentPosition = targetPosition;
