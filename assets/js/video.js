@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 /* =====================================
    PARALLAX BACKGROUND
 ===================================== */
@@ -105,14 +106,10 @@ if (background) {
   Object.assign(parallaxLayer.style, {
     position: "absolute",
     top: "0",
-    left: "0",
-    width: "100%",
-    height: "100%",
+    left: "50%",
     backgroundImage: `url("${imageURL}")`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center top",
-    backgroundSize: "cover",
-    transform: "translate3d(0, 0, 0)",
     willChange: "transform"
   });
 
@@ -120,7 +117,7 @@ if (background) {
 
 
   /* =====================================
-     DIMENSIONES DEL FONDO
+     CALCULAR DIMENSIONES
   ===================================== */
 
   function calculateParallax() {
@@ -128,34 +125,36 @@ if (background) {
     if (!imageReady) return;
 
     const viewportWidth = document.documentElement.clientWidth;
-    const viewportHeight = window.innerHeight;
+    const viewportHeight = background.clientHeight;
 
-    const extraTravel = viewportHeight * 0.35;
+    // Margen adicional arriba y abajo
+    const requiredHeight = viewportHeight * 1.7;
 
     const scale = Math.max(
       viewportWidth / image.naturalWidth,
-      (viewportHeight + extraTravel) / image.naturalHeight
+      requiredHeight / image.naturalHeight
     );
 
     const renderedWidth = image.naturalWidth * scale;
     const renderedHeight = image.naturalHeight * scale;
 
-    maxTravel = Math.max(
-      0,
-      renderedHeight - viewportHeight
-    );
-
     parallaxLayer.style.width = `${renderedWidth}px`;
     parallaxLayer.style.height = `${renderedHeight}px`;
-
-    parallaxLayer.style.left = "50%";
-    parallaxLayer.style.top = "0";
 
     parallaxLayer.style.backgroundSize =
       `${renderedWidth}px ${renderedHeight}px`;
 
+    // Espacio de seguridad para el movimiento
+    maxTravel = Math.max(
+      0,
+      (renderedHeight - viewportHeight) / 2
+    );
+
+    currentPosition = Math.min(currentPosition, maxTravel);
+
+    // Comenzar con imagen sobrante arriba y abajo
     parallaxLayer.style.transform =
-      `translate3d(-50%, ${-currentPosition}px, 0)`;
+      `translate3d(-50%, ${-maxTravel - currentPosition}px, 0)`;
 
     updateTarget();
   }
@@ -172,7 +171,7 @@ if (background) {
     const maxScroll = Math.max(
       1,
       document.documentElement.scrollHeight -
-      window.innerHeight
+      document.documentElement.clientHeight
     );
 
     const progress = Math.min(
@@ -187,7 +186,7 @@ if (background) {
 
 
   /* =====================================
-     MOVIMIENTO SUAVE
+     MOVIMIENTO CON INERCIA
   ===================================== */
 
   function animateParallax() {
@@ -201,7 +200,7 @@ if (background) {
     }
 
     parallaxLayer.style.transform =
-      `translate3d(-50%, ${-currentPosition}px, 0)`;
+      `translate3d(-50%, ${-maxTravel - currentPosition}px, 0)`;
 
     if (currentPosition !== targetPosition) {
 
@@ -225,7 +224,7 @@ if (background) {
 
 
   /* =====================================
-     CARGA DE IMAGEN
+     CARGAR IMAGEN
   ===================================== */
 
   image.onload = () => {
@@ -255,17 +254,16 @@ if (background) {
     { passive: true }
   );
 
-  window.addEventListener(
-    "resize",
-    calculateParallax
-  );
-
+  // Recalcular solamente al cambiar orientación
   window.addEventListener(
     "orientationchange",
-    calculateParallax
+    () => {
+      requestAnimationFrame(calculateParallax);
+    }
   );
 
 }
+
 
 
 });
