@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const isMobile = viewportWidth <= 1100;
 
       // Menos altura adicional para reducir el zoom.
-      const extraHeight = isMobile ? 1.15 : 1.25;
+      const extraHeight = isMobile ? 1.20 : 1.25;
 
       const requiredHeight = viewportHeight * extraHeight;
 
