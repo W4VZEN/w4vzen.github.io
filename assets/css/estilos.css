@@ -37,6 +37,10 @@ html {
   width: 100%;
   height: 100vh;
   height: 100dvh;
+
+  /* Margen de seguridad inferior */
+  bottom: -40px;
+
   z-index: -2;
   pointer-events: none;
   overflow: hidden;
@@ -50,11 +54,11 @@ html {
   width: 100%;
   height: 100vh;
   height: 100dvh;
+
   z-index: -1;
   pointer-events: none;
   background: rgba(0, 0, 0, 0.25);
 }
-
 
 
 /* ===========================
