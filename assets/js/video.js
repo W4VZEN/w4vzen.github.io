@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+ 
   /* =====================================
      PARALLAX BACKGROUND
   ===================================== */
@@ -80,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (background) {
 
     const imageURL = "/assets/img/fondo-escritorio.webp";
-
     const image = new Image();
 
     image.decoding = "async";
@@ -93,6 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentPosition = 0;
     let targetPosition = 0;
 
+    let lastViewportWidth = 0;
+    let lastViewportHeight = 0;
+
     const parallaxLayer = document.createElement("div");
 
     Object.assign(parallaxLayer.style, {
@@ -101,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       left: "50%",
       backgroundImage: `url("${imageURL}")`,
       backgroundRepeat: "no-repeat",
-      backgroundPosition: "center top",
+      backgroundPosition: "center center",
       willChange: "transform"
     });
 
@@ -119,8 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const viewportWidth = document.documentElement.clientWidth;
       const viewportHeight = background.clientHeight;
 
-      // Altura adicional para evitar zonas sin imagen.
-      const requiredHeight = viewportHeight * 1.7;
+      const isMobile = viewportWidth <= 1100;
+
+      // Menos altura adicional para reducir el zoom.
+      const extraHeight = isMobile ? 1.15 : 1.25;
+
+      const requiredHeight = viewportHeight * extraHeight;
 
       const scale = Math.max(
         viewportWidth / image.naturalWidth,
@@ -136,10 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
       parallaxLayer.style.backgroundSize =
         `${renderedWidth}px ${renderedHeight}px`;
 
+      // Limitar el recorrido vertical.
       maxTravel = Math.max(
         0,
         renderedHeight - viewportHeight
-      );
+      ) * 0.65;
 
       currentPosition = Math.min(
         Math.max(currentPosition, 0),
@@ -148,6 +156,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       parallaxLayer.style.transform =
         `translate3d(-50%, ${-currentPosition}px, 0)`;
+
+      lastViewportWidth = viewportWidth;
+      lastViewportHeight = viewportHeight;
 
       updateTarget();
 
@@ -183,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================
-       MOVIMIENTO SUAVE CON INERCIA
+       MOVIMIENTO SUAVE
     ===================================== */
 
     function animateParallax() {
@@ -255,7 +266,18 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener(
       "resize",
       () => {
-        requestAnimationFrame(calculateParallax);
+
+        const width = document.documentElement.clientWidth;
+        const height = background.clientHeight;
+
+        // Evitar recalcular por cambios irrelevantes.
+        if (
+          width !== lastViewportWidth ||
+          Math.abs(height - lastViewportHeight) > 80
+        ) {
+          requestAnimationFrame(calculateParallax);
+        }
+
       },
       { passive: true }
     );
@@ -268,5 +290,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   }
+
 
 });
