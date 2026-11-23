@@ -176,10 +176,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const scrollPosition = window.scrollY;
 
       const maxScroll = Math.max(
-        1,
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight
-      );
+     1,
+     document.documentElement.scrollHeight -
+    window.innerHeight
+ );
 
       const progress = Math.min(
         1,
