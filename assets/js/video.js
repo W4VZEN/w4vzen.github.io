@@ -197,30 +197,37 @@ document.addEventListener("DOMContentLoaded", () => {
        MOVIMIENTO SUAVE
     ===================================== */
 
-    function animateParallax() {
+   
+function animateParallax() {
 
-      const difference = targetPosition - currentPosition;
+  const difference = targetPosition - currentPosition;
 
-      currentPosition += difference * 0.16;
+  currentPosition += difference * 0.16;
 
-      if (Math.abs(difference) < 0.3) {
-        currentPosition = targetPosition;
-      }
+  // Evitar que quede una diferencia residual al llegar al final.
+  if (
+    Math.abs(difference) < 0.3 ||
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight - 2
+  ) {
+    currentPosition = targetPosition;
+  }
 
-      parallaxLayer.style.transform =
-        `translate3d(-50%, ${-currentPosition}px, 0)`;
+  parallaxLayer.style.transform =
+    `translate3d(-50%, ${-currentPosition}px, 0)`;
 
-      if (currentPosition !== targetPosition) {
+  if (currentPosition !== targetPosition) {
 
-        animationFrame = requestAnimationFrame(animateParallax);
+    animationFrame = requestAnimationFrame(animateParallax);
 
-      } else {
+  } else {
 
-        animationFrame = null;
+    animationFrame = null;
 
-      }
+  }
 
-    }
+}
+
 
 
     function startAnimation() {
