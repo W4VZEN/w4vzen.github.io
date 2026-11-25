@@ -135,25 +135,31 @@ document.addEventListener("DOMContentLoaded", () => {
      INTERSECTION OBSERVER
   ===================================== */
 
-  const observer = new IntersectionObserver(
-    entries => {
+  
+const observer = new IntersectionObserver(
+  entries => {
 
-      entries.forEach(entry => {
+    entries.forEach(entry => {
 
-        if (!entry.isIntersecting) return;
+      if (entry.isIntersecting) {
 
         entry.target.classList.add("is-visible");
 
-        observer.unobserve(entry.target);
+      } else {
 
-      });
+        entry.target.classList.remove("is-visible");
 
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -8% 0px"
-    }
-  );
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.12,
+    rootMargin: "0px 0px -8% 0px"
+  }
+);
+
 
 
   function observeElement(element) {
