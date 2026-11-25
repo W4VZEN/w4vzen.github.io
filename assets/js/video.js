@@ -212,13 +212,6 @@ const observer = new IntersectionObserver(
   });
 
 
-  /* =====================================
-     7. VIDEO
-  ===================================== */
-
-  document.querySelectorAll(".video-container").forEach(
-    observeElement
-  );
 
 
   /* =====================================
@@ -299,7 +292,7 @@ const observer = new IntersectionObserver(
   } else {
 
     document.querySelectorAll(
-      ".section-title, .bio-section, .video-container, " +
+      ".section-title, .bio-section, " +
       ".music-image, .release-card, .motion-item"
     ).forEach(element => {
 
