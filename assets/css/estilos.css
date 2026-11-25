@@ -1217,6 +1217,7 @@ footer .social-icons a {
 }
 
 
+
 /* ==================================================
    W4VZEN — ANIMACIONES CINEMATOGRÁFICAS
    ESTILOS GENERALES / ESCRITORIO
@@ -1293,19 +1294,35 @@ footer .social-icons a {
 
 
 /* ==========================================
-   4. VIDEO
-   REVELADO CON MÁSCARA
+   4. VIDEO YOUTUBE
+   SIN ANIMACIONES
 ========================================== */
 
 .video-container {
-  clip-path: inset(0 0 100% 0);
+  position: relative;
+  width: 94%;
+  max-width: 1250px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
 
-  transition:
-    clip-path 1.2s cubic-bezier(0.76, 0, 0.24, 1);
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  clip-path: none;
+  transition: none;
 }
 
-.video-container.is-visible {
-  clip-path: inset(0 0 0 0);
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+
+  opacity: 1;
+  visibility: visible;
 }
 
 
@@ -1379,10 +1396,6 @@ body:not(.animations-ready) .release-card {
   transform: none;
 }
 
-body:not(.animations-ready) .video-container {
-  clip-path: none;
-}
-
 body:not(.animations-ready) .bio-line {
   transform: none;
 }
@@ -1397,16 +1410,22 @@ body:not(.animations-ready) .bio-line {
   .section-title .char-inner,
   .motion-item,
   .bio-line,
-  .video-container,
   .music-image,
   .release-card {
     transition: none !important;
     animation: none !important;
     transform: none !important;
-    clip-path: none !important;
     opacity: 1 !important;
   }
 
+  .video-container,
+  .video-container iframe {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
 }
-
-
